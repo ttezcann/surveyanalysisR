@@ -1,0 +1,508 @@
+/* Custom CSS from Awesome Styler Plugin */
+:root {
+  /* Font Settings */
+  --ls-font-family: "OS System default", sans-serif; 
+  --font-content: "OS System default", sans-serif;
+  --font-content-size: 15px;
+  --ct-line-height: 1.2;
+  --font-ui: "OS System default", sans-serif;
+  --font-ui-size: 11px;
+
+  /* General Colors */
+  --color-title-text: #000000;
+  --color-content-text: #121315;  /* page names color in the left side*/
+  --color-content-text-bold: #0C0D14;
+  --color-content-text-italic: #282A36;
+  --color-link: #0D7B8A;   /* wikilinks */
+  --color-link-ext: #B88726;
+  --color-tag-text: #FDFDFD;
+  --color-tag: #406E84;
+  --color-tag-text-hover: #B88726;
+
+
+  /* UI Colors */
+  --color-ui-rsidebar-bg: #FEFEFE;
+  --color-ui-lsidebar-bg: #E7E7E7;
+  --color-ui-lsidebar-bg-accent: #479FAD;
+  --color-ui-lsidebar-bg-accent-hover: #266f7a;
+  --color-ui-lsidebar-text: #010101;
+  --color-ui-body-bg: #FFFFFF;
+
+  /* Content Backgrounds */
+  --color-content-props-bg: #dadad9;
+  --color-content-alt-bg: #dadad9;
+
+
+  /* Headings */
+  --color-h1: #030303;
+  --color-h2: #030303;
+  --color-h3: #030303;
+  --color-h4: #030303;
+  --color-h5: #030303;
+  --color-h6: #030303;
+	--h1-size: 18px;
+  --h2-size: 17px;
+  --h3-size: 16px;
+  --h4-size: 15px;
+  --h5-size: 14px;
+
+  /* Highlighting */
+  --color-mark-bg: #3996A3;
+  --color-mark-text: #F4F4F4;
+  --ls-highlight-color: var(--color-mark-bg) !important;
+
+	
+  /* Quotes */
+  --color-quote-bg: #EAEAE5;
+  --color-quote-text: #000000;
+
+  /* Flashcards */
+  --color-flashcard-bg: #FEFEFE;
+  --color-flashcard-text: #282A36;
+
+  /* Inline Code */
+  --color-inline-code-bg: #D6D8DF;
+  --color-inline-code-text: #282A36;
+
+
+}
+
+/* ===================================== */
+/*            APPLY FONTS                */
+/* ===================================== */
+
+body {
+  font-family: var(--font-content);
+  font-size: var(--font-content-size);
+	background-color: var(--color-ui-body-bg);
+  color: var(--color-content-text);
+	line-height: var(--ct-line-height) !important;
+
+}
+
+
+
+/* ===================================== */
+/*            COLORS                     */
+/* ===================================== */
+
+/* General Linked References Background */
+
+.block-properties {
+    background-color: var(--color-content-props-bg) !important;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+
+/* Content Background */
+.content {
+  background-color: var(--color-content-bg);
+  max-width: var(--content-max-width);
+}
+
+
+/* Content Alternative Background */
+.alt-bg {
+  background-color: var(--color-content-alt-bg);
+}
+
+/* Sidebar Accent */
+.sidebar-accent {
+  background-color: var(--color-ui-lsidebar-bg-accent) !important;
+}
+
+
+/* Sidebar Text */
+.sidebar-text {
+  color: var(--color-ui-lsidebar-text);
+}
+
+
+/* link colors */
+
+.internal-link {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.external-link {
+  color: var(--color-link-ext);!important; 
+	text-decoration: none !important; /* Optional: Add underline on hover */
+
+}
+
+.external-link:hover {
+  color: #A06F1A !important; /* Change color when hovered */
+  text-decoration: none !important; /* Optional: Add underline on hover */
+}
+
+/* wikilink */
+
+.wikilink {
+    text-decoration: none; /* Remove underline */
+    color: #0D7B8A; /* Default link color */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Smooth transition */
+    padding: 2px 4px; /* Adds spacing inside */
+    border-radius: 4px; /* Rounded corners for the effect */
+}
+/* wikilink hover effect is determined by logseq accent */
+
+
+
+/* Highlight entire block when in editor mode */
+
+
+.ls-block .editor-wrapper:focus-within {
+    background-color: #eaeaea !important;
+    border-radius: 5px !important;
+    padding: 2px !important;
+    margin: -2px !important;
+    outline: 2px solid #ccc !important;
+}
+
+
+/* ===================================== */
+/*            CODE                      */
+/* ===================================== */
+
+/* Reduce the size of inline code blocks (e.g., keyboard shortcuts) */
+code {
+    font-size: 11px !important;  /* Smaller font */
+    padding: 1px 3px !important; /* Reduce padding */
+    border-radius: 5px !important; /* Smaller rounded corners */
+    line-height: 2 !important; /* Reduce line height */
+}
+
+
+
+/* Ensure code blocks are not affected */
+pre code {
+    font-size: inherit !important;
+    padding: inherit !important;
+}
+
+
+/* ===================================== */
+/*            PAGE TITLE                 */
+/* ===================================== */
+
+/* Page title */
+.title {
+  font-size: 22px !important; /* Adjust as needed */
+  color: #030303 !important; /* Set desired color */
+  font-weight: bold !important; /* Control weight */
+  text-align: left !important; /* Align as needed */
+  margin-top: 5px !important; /* Adjust spacing */
+  margin-bottom: 5px !important;
+  padding: 0px 0 !important; /* Add padding if necessary */
+}
+
+
+
+/* ===================================== */
+/*            HEADINGS                   */
+/* ===================================== */
+
+/* Headings */
+/* Ensure each heading has its specific size and color in both reading & editing mode */
+h1, .block-content h1, .ls-block h1 {
+  font-size: var(--h1-size) !important;
+  color: var(--color-h1) !important;
+	font-weight: bold !important;
+	margin-top: 9px !important;
+  margin-bottom: 0px !important;
+}
+h2, .block-content h2, .ls-block h2 {
+  font-size: var(--h2-size) !important;
+  color: var(--color-h2) !important;
+	font-weight: bold !important;
+	margin-top: 9px !important;
+  margin-bottom: 0px !important;
+}
+
+h3, .block-content h3, .ls-block h3 {
+  font-size: var(--h3-size) !important;
+  color: var(--color-h3) !important;
+	font-weight: bold !important;
+	margin-top: 9px !important;
+  margin-bottom: 0px !important;
+}
+
+h4, .block-content h4, .ls-block h4 {
+  font-size: var(--h4-size) !important;
+  color: var(--color-h4) !important;
+	font-weight: bold !important;
+	margin-top: 8px !important;
+  margin-bottom: 0px !important;
+}
+
+h5, .block-content h5, .ls-block h5 {
+  font-size: var(--h5-size) !important;
+  color: var(--color-h5) !important;
+	font-weight: bold !important;
+	margin-top: 8px !important;
+  margin-bottom: 0px !important;
+}
+
+
+/* ===================================== */
+/*            SPACING                   */
+/* ===================================== */
+
+/* Reduce line spacing within the same block in view mode */
+.ls-block {
+    margin-bottom: 1px !important;  /* Adjust as needed */
+    padding-bottom: 1px !important;
+}
+
+/* Apply custom line height to block content and paragraphs */
+/* Ensure block content looks the same in view and edit mode */
+.block-content, .editor-inner, .block-properties {
+    color: var(--color-content-text) !important;
+    line-height: var(--ct-line-height, 1.4) !important;
+    padding: 4px !important;
+}
+
+/* Ensure inline text appearance is consistent */
+.editor-inner {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Ensure paragraphs inside editor and view mode look the same */
+.block-content p, .editor-inner p {
+    line-height: var(--ct-line-height, 1.4) !important;
+    margin-bottom: 4px !important;
+}
+
+
+/* ===================================== */
+/*            TAGS                       */
+/* ===================================== */
+
+/* Tags */
+.tag {
+  background-color: var(--color-tag) !important; /* Keeps the original background */
+  color: #e5e5e5 !important; /* Forces white text for visibility */
+  padding: 2px 2px !important;
+  border-radius: 3px !important;
+  font-weight: normal !important;
+	line-height: 1 !important; /* Reduce line spacing */
+	font-size: var(--font-content-size);
+  display: inline-block !important;
+  text-decoration: none !important;
+	transition: color 0.2s ease-in-out; /* Smooth transition for color change */
+}
+
+/* Apply the hover effect */
+.tag:hover {
+  color: var(--color-tag-text-hover) !important;
+}
+
+
+
+/* ===================================== */
+/*            QUOTES and FLASHCARDS      */
+/* ===================================== */
+
+/* Quotes */
+.blockquote {
+  background-color: var(--color-quote-bg);
+  color: var(--color-quote-text);
+  padding: 10px;
+  border-left: 5px solid var(--color-link);
+}
+
+/* Flashcards */
+.flashcard {
+  background-color: var(--color-flashcard-bg);
+  color: var(--color-flashcard-text);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* ===================================== */
+/*            TEXT HIGHLIGHTING          */
+/* ===================================== */
+/* Highlight text selection */
+::selection {
+  background-color: var(--color-mark-bg) !important;
+  color: var(--color-mark-text) !important;
+}
+
+
+/* ===================================== */
+/*            miscellaneous             */
+/* ===================================== */
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .sidebar-left, .sidebar-right {
+    width: auto;
+  }
+}
+
+/* shape of the toggling arrow */
+
+.rotating-arrow svg {
+    fill: #266f7a;
+    height: 24px;
+}
+
+/* Your existing CSS */
+.block-control .control-hide:has(.rotating-arrow.collapsed) {
+  display: inline;
+}
+
+.bullet-container:not(.typed-list).bullet-closed {
+  background-color: #68C3D0;
+  border-color: #68C3D0 !important;
+  height: 4px;
+  width: 4px;
+}
+
+.bullet-container:not(.typed-list).bullet-closed::before {
+  background-color: #68C3D0 !important;
+  border-color: #68C3D0 !important;
+}
+
+/* New CSS for numbered list items */
+.bullet-container.bullet-closed {
+  background-color: #68C3D0 !important;
+  border-color: #68C3D0 !important;
+}
+
+.bullet-container.bullet-closed::before {
+  background-color: #68C3D0 !important;
+  border-color: #68C3D0 !important;
+}
+
+/* Handle numbered lists specifically */
+ol.block-body .bullet-container.bullet-closed,
+.ls-block[data-refs-self*='"block-content-type","numbered"'] .bullet-container.bullet-closed {
+  background-color: #68C3D0 !important;
+  border-color: #68C3D0 !important;
+}
+
+/* Handle the collapsed state for various list types */
+.blocks-container .ls-block.collapsed .bullet-container {
+  background-color: #68C3D0 !important;
+  border-color: #68C3D0 !important;
+}
+
+
+
+/* Style for Time Tracking (Clocked Tasks) */
+.time-spent {
+  padding-left: 1px;
+  text-wrap: nowrap;
+  font-weight: bold;
+}
+
+
+
+
+/* Only target LOGBOOK */
+.logbook,
+.block-properties .property-key[data-ref="logbook"] {
+  font-size: 11px;  /* Smaller size for LOGBOOK */
+}
+
+
+
+.page-reference {
+    transform: none !important;
+    transition: none !important;
+}
+
+
+/* Hide Logseq reference properties */
+.references .page-properties,
+.references .block-properties {
+    display: none;
+}
+
+
+
+
+/* Increase the distance between different tasks */
+div[data-refs-self*="todo"] + div[data-refs-self*="todo"],
+div[data-refs-self*="done"] + div[data-refs-self*="done"] {
+    margin-top: 0px !important;
+}
+
+
+
+
+/* Custom CSS for Logseq priorities in table view */
+
+/* Common styles for all priorities */
+div[data-refs-self*="TODO"] .block-content {
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Priority A - High */
+div[data-refs-self*="TODO"] .block-content span:contains("[#A]")::before,
+div[data-refs-self*="TODO"] .block-content:contains("[#A]")::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #e45858;
+  border-radius: 50%;
+}
+
+/* Priority B - Medium */
+div[data-refs-self*="TODO"] .block-content span:contains("[#B]")::before,
+div[data-refs-self*="TODO"] .block-content:contains("[#B]")::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #e99e40;
+  border-radius: 50%;
+}
+
+/* Priority C - Low */
+div[data-refs-self*="TODO"] .block-content span:contains("[#C]")::before,
+div[data-refs-self*="TODO"] .block-content:contains("[#C]")::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #ebca40;
+  border-radius: 50%;
+}
+
+
+/* Alternative approach using data-content attribute */
+
+/* Priority A */
+.ls-block[data-content*="[#A]"] .block-content::before {
+  content: "🔴";
+  margin-right: 4px;
+}
+
+/* Priority B */
+.ls-block[data-content*="[#B]"] .block-content::before {
+  content: "🟠";
+  margin-right: 4px;
+}
+
+/* Priority C */
+.ls-block[data-content*="[#C]"] .block-content::before {
+  content: "🟡";
+  margin-right: 4px;
+}
