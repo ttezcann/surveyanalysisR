@@ -63,7 +63,8 @@
   /* Inline Code */
   --color-inline-code-bg: #D6D8DF;
   --color-inline-code-text: #282A36;
-
+  
+  --ls-main-content-max-width: 1000px;
 
 }
 
