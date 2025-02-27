@@ -13,7 +13,7 @@
   --color-content-text: #121315;  /* page names color in the left side*/
   --color-content-text-bold: #0C0D14;
   --color-content-text-italic: #282A36;
-  --color-link: #0D7B8A;   /* wikilinks */
+  --color-link: teal;   /* wikilinks */
   --color-link-ext: #B88726;
   --color-tag-text: #FDFDFD;
   --color-tag: #406E84;
