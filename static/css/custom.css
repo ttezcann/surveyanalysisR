@@ -547,3 +547,21 @@ div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper >
 div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .flex > .flex.flex-row.items-center {
     display: none;
 }
+
+
+
+/* Style the block containing the TOC heading */
+.ls-block:has(> .ls-block-content h2) {
+    margin-left: 16px;
+    padding: 10px;
+}
+
+/* Style the unordered list (bullets) in the TOC */
+.ls-block .bullets-container {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ls-block .bullets-container li {
+    margin-bottom: 5px;
+}
