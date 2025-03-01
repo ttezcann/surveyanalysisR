@@ -565,3 +565,48 @@ div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper >
 .ls-block .bullets-container li {
     margin-bottom: 5px;
 }
+
+
+
+@import url("https://cdn.jsdelivr.net/gh/henices/logseq-flow-nord@main/src/palettes/one-dark-pro.css");
+
+/* Styles for Auto-Hiding and Revealing on Mouse Hover for Block Properties */
+.block-content-inner:has(+.block-properties)::after {
+  padding-left: 10px;
+  color: hsl(var(--ct-accent-color));
+  font-family: var(--ls-font-family-code);
+  font-weight: bold;
+  content: "P";
+}
+
+.block-properties {
+  display: none;
+}
+
+/* Styles for Auto-Hiding and Revealing on Mouse Hover for Block Properties */
+/* Now the properties' tags can be clicked too */
+.block-properties {
+  display: none;
+  position: absolute;
+  transform: translate(0%, -10%); /* Move the properties horizontally aligned with the ".block-content-inner" DIV Left Margin */
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid var(--ls-secondary-border-color); /* Add custom border color from pre-defied variables */
+  background: var(--ls-primary-background-color)
+}
+/* Show block properties on hovering .block-content-inner */
+.block-content-inner:hover ~ .block-properties {
+  display: block;
+  opacity: 1;
+  z-index: 999;
+}
+/* Keep Showing block properties on hovering .block-properties */
+.block-properties:hover {
+  display: block;
+  opacity: 1;
+  z-index: 999;
+}
+
+.block-properties {
+  display: none;
+}
