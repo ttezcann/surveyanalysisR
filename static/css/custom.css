@@ -359,7 +359,7 @@ h5, .block-content h5, .ls-block h5 {
 
 .rotating-arrow svg {
     fill: #266f7a;
-    height: 24px;
+    height: 20px;
 }
 
 /* Your existing CSS */
@@ -367,27 +367,22 @@ h5, .block-content h5, .ls-block h5 {
   display: inline;
 }
 
-.bullet-container:not(.typed-list).bullet-closed {
-  background-color: #68C3D0;
-  border-color: #68C3D0 !important;
-  height: 4px;
-  width: 4px;
-}
-
-.bullet-container:not(.typed-list).bullet-closed::before {
-  background-color: #68C3D0 !important;
-  border-color: #68C3D0 !important;
-}
-
-/* New CSS for numbered list items */
+/* Make bullet a single solid circle (no ring or extra dot) */
+.bullet-container:not(.typed-list).bullet-closed,
 .bullet-container.bullet-closed {
-  background-color: #68C3D0 !important;
-  border-color: #68C3D0 !important;
+  background-color: #266f7a !important; /* or your preferred color */
+  border-radius: 70% !important; 
+  width: 12px !important;    /* Adjust size as needed */
+  height: 12px !important;   /* Adjust size as needed */
+  opacity: 5 !important;    /* Ensure no transparency */
 }
 
+/* Remove the extra “dot” or ring drawn via ::before */
+.bullet-container:not(.typed-list).bullet-closed::before,
 .bullet-container.bullet-closed::before {
-  background-color: #68C3D0 !important;
-  border-color: #68C3D0 !important;
+  display: none !important;
+  content: none !important;
+  border: none !important;
 }
 
 /* Handle numbered lists specifically */
@@ -522,7 +517,7 @@ div[data-refs-self*="TODO"] .block-content:contains("[#C]")::before {
 
 
 /* ===================================== */
-/*            EMBEDDING SETTINGS         */
+/* PAGE and BLOCK EMBEDDING SETTINGS     */
 /* ===================================== */
 
 /* Existing Styles for Embedded Blocks */
