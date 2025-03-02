@@ -13,11 +13,13 @@
   --color-content-text: #121315;  /* page names color in the left side*/
   --color-content-text-bold: #0C0D14;
   --color-content-text-italic: #282A36;
-  --color-link: cyan;   /* wikilinks */
+  --color-link: #3996A3;  /* wikilinks */
   --color-link-ext: #B88726;
   --color-tag-text: #FDFDFD;
   --color-tag: #406E84;
   --color-tag-text-hover: #B88726;
+  --ls-accent-color: #3996A3; /* Cyan */
+  --ct-accent-color: #3996A3; /* Cyan */
 
 
   /* UI Colors */
@@ -40,7 +42,7 @@
   --color-h4: #030303;
   --color-h5: #030303;
   --color-h6: #030303;
-	--h1-size: 18px;
+  --h1-size: 18px;
   --h2-size: 17px;
   --h3-size: 16px;
   --h4-size: 15px;
@@ -67,6 +69,8 @@
   --ls-main-content-max-width: 1200px;
 
 }
+
+
 
 /* ===================================== */
 /*            APPLY FONTS                */
@@ -128,7 +132,7 @@ body {
 }
 
 .external-link {
-  color: var(--color-link-ext);!important; 
+  color: var(--color-link-ext); !important; 
 	text-decoration: none !important; /* Optional: Add underline on hover */
 
 }
@@ -139,6 +143,29 @@ body {
 }
 
 /* wikilink */
+.page-ref, .block-ref {
+  color: hsl(var(--ls-accent-color)) !important; /* Use the accent color for wiki links */
+}
+
+.page-ref, .block-ref {
+  color: var(--ls-accent-color) !important;
+}
+.page-ref:hover, .block-ref:hover {
+  color: #2F7C8F !important;
+}
+
+.block-content-inner:has(.embed-block)::after,
+.block-content-inner:has(.embed-page)::after {
+  color: var(--ct-accent-color) !important;
+}
+
+.tag {
+  background-color: var(--ls-accent-color) !important;
+  color: #e5e5e5 !important;
+}
+.tag:hover {
+  color: #2F7C8F !important;
+}
 
 .wikilink {
     text-decoration: none; /* Remove underline */
@@ -606,10 +633,6 @@ div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper >
 
 
 
-
-
-
-@import url("https://cdn.jsdelivr.net/gh/henices/logseq-flow-nord@main/src/palettes/one-dark-pro.css");
 
 /* Styles for Auto-Hiding and Revealing on Mouse Hover for Block Properties */
 .block-content-inner:has(+.block-properties)::after {
