@@ -550,40 +550,25 @@ div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper >
 
 
 
-/* Style the block containing the TOC heading */
-.ls-block:has(> .ls-block-content h2) {
-    margin-left: 16px;
-    padding: 10px;
-}
-
-/* Style the unordered list (bullets) in the TOC */
-.ls-block .bullets-container {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.ls-block .bullets-container li {
-    margin-bottom: 5px;
-}
 
 
+@import url("https://cdn.jsdelivr.net/gh/henices/logseq-flow-nord@main/src/palettes/one-dark-pro.css");
 
-
-/* Hide block properties by default */
-.block-properties {
-  display: none;
-}
-
-/* Show properties only when the block is being edited (textarea is present) */
-.block-content:has(textarea) .block-properties {
-  display: block;
-}
-
-/* Add "P" indicator after block content if properties exist */
+/* Styles for Auto-Hiding and Revealing on Mouse Hover for Block Properties */
 .block-content-inner:has(+.block-properties)::after {
   padding-left: 10px;
   color: hsl(var(--ct-accent-color));
   font-family: var(--ls-font-family-code);
   font-weight: bold;
   content: "P";
+}
+
+.block-properties {
+  display: none;
+}
+
+/* Display Block Properties when hovering over the entire Block element, not just its text */
+.block-main-container:has(.block-properties):hover .block-properties,
+#right-sidebar .block-properties {
+  display: block;
 }
