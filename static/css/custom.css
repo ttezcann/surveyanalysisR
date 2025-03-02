@@ -3,10 +3,10 @@
   /* Font Settings */
   --ls-font-family: "OS System default", sans-serif; 
   --font-content: "OS System default", sans-serif;
-  --font-content-size: 15px;
+  --font-content-size: 18px;
   --ct-line-height: 1.2;
   --font-ui: "OS System default", sans-serif;
-  --font-ui-size: 11px;
+  --font-ui-size: 17px;
 
   /* General Colors */
   --color-title-text: #000000;
@@ -55,8 +55,8 @@
 
 	
   /* Quotes */
-  --color-quote-bg: #EAEAE5;
-  --color-quote-text: #000000;
+  --color-quote-bg: #EAEAE5 !important;; 
+  --color-quote-text: #000000 !important;;
 
   /* Flashcards */
   --color-flashcard-bg: #FEFEFE;
@@ -66,8 +66,16 @@
   --color-inline-code-bg: #D6D8DF;
   --color-inline-code-text: #282A36;
   
-  --ls-main-content-max-width: 1200px;
+  /* content sizes */
+  --ls-main-content-max-width: 90%;
+  --ls-right-sidebar-width: 35%;
+
+  .sidebar-item.content {
+  font-size: 16px /* or whatever you want */
 }
+
+}
+
 
 
 
@@ -84,6 +92,59 @@ body {
 
 }
 
+
+/* Force light mode and block dark mode */
+html[data-theme='dark'] {
+  filter: invert(0) !important;
+  background-color: #FFFFFF !important;
+}
+
+/* Force light mode for all elements */
+html[data-theme='dark'] * {
+  color-scheme: light !important;
+  background-color: initial;
+}
+
+/* Ensure dark mode toggle has no effect */
+.dark-mode,
+.dark-mode * {
+  background-color: var(--color-ui-body-bg) !important;
+  color: var(--color-content-text) !important;
+}
+
+/* Force Logseq to maintain light theme settings */
+html[data-theme='dark'] .theme-settings {
+  visibility: hidden;
+}
+
+/* Optional: Hide dark mode toggle if available */
+.dark-mode-toggle,
+[data-toggle-theme] {
+  display: none !important;
+}
+
+* {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+
+/* Apply UI font size to specific UI elements */
+.cp__left-sidebar,              /* Left sidebar */
+.cp__right-sidebar,             /* Right sidebar */
+.cp__header,                    /* Header or top bar */
+.nav-link,                      /* Navigation links */
+button, .btn                    /* Buttons */
+{
+  font-size: var(--font-ui-size);
+}
+
+/* Target left sidebar text and buttons */
+.cp__left-sidebar a,
+.cp__left-sidebar .nav-link,
+.btn {
+  font-size: var(--font-ui-size) !important;
+}
 
 /* ===================================== */
 /*            COLORS                     */
@@ -319,10 +380,10 @@ h5, .block-content h5, .ls-block h5 {
 
 /* Quotes */
 .blockquote {
-  background-color: var(--color-quote-bg);
-  color: var(--color-quote-text);
-  padding: 10px;
-  border-left: 5px solid var(--color-link);
+  background-color: var(--color-quote-bg) !important;
+  color: var(--color-quote-text) !important;
+  padding: 10px !important;
+  border-left: 5px solid var(--color-link) !important;
 }
 
 /* Flashcards */
@@ -438,82 +499,6 @@ div[data-refs-self*="todo"] + div[data-refs-self*="todo"],
 div[data-refs-self*="done"] + div[data-refs-self*="done"] {
     margin-top: 0px !important;
 }
-
-
-
-
-/* Custom CSS for Logseq priorities in table view */
-
-/* Common styles for all priorities */
-div[data-refs-self*="TODO"] .block-content {
-  position: relative;
-  padding-left: 20px;
-}
-
-/* Priority A - High */
-div[data-refs-self*="TODO"] .block-content span:contains("[#A]")::before,
-div[data-refs-self*="TODO"] .block-content:contains("[#A]")::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  background-color: #e45858;
-  border-radius: 50%;
-}
-
-/* Priority B - Medium */
-div[data-refs-self*="TODO"] .block-content span:contains("[#B]")::before,
-div[data-refs-self*="TODO"] .block-content:contains("[#B]")::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  background-color: #e99e40;
-  border-radius: 50%;
-}
-
-/* Priority C - Low */
-div[data-refs-self*="TODO"] .block-content span:contains("[#C]")::before,
-div[data-refs-self*="TODO"] .block-content:contains("[#C]")::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  background-color: #ebca40;
-  border-radius: 50%;
-}
-
-
-/* Alternative approach using data-content attribute */
-
-/* Priority A */
-.ls-block[data-content*="[#A]"] .block-content::before {
-  content: "🔴";
-  margin-right: 4px;
-}
-
-/* Priority B */
-.ls-block[data-content*="[#B]"] .block-content::before {
-  content: "🟠";
-  margin-right: 4px;
-}
-
-/* Priority C */
-.ls-block[data-content*="[#C]"] .block-content::before {
-  content: "🟡";
-  margin-right: 4px;
-}
-
-
 
 
 /* ===================================== */
