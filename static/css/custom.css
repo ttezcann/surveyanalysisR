@@ -127,7 +127,9 @@ body {
 .external-link {
   color: var(--color-link-ext); !important; 
 	text-decoration: none !important; 
-
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .external-link:hover {
@@ -149,30 +151,19 @@ body {
 .block-ref:hover,
 .wikilink:hover,
 .internal-link:hover {
-  color: var(--ls-accent-color) !important; 
-  background-color: #E0F2F1 !important; /* Adds a light cyan background highlight on hover */
-  text-decoration: none !important;     /* Removes any text decoration like underlines */
-  border: none !important;              /* Ensures no border is added */
-  outline: none !important;             /* Removes any outline */
-  padding: 0 !important;                /* Removes any padding */
-  border-radius: 0 !important;          /* Removes any border radius */
+  color: var(--ls-accent-color) !important; /* Replace with your desired hover text color */
+  background-color: #cfe8e9 !important;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
+
 
 .block-content-inner:has(.embed-block)::after,
 .block-content-inner:has(.embed-page)::after {
   color: var(--ct-accent-color) !important;
 }
-
-.tag {
-  background-color: var(--ls-accent-color) !important;
-  color: #e5e5e5 !important;
-}
-.tag:hover {
-  color: #2F7C8F !important;
-}
-
-/* wikilink hover effect is determined by logseq accent */
-
 
 
 /* Highlight entire block when in editor mode */
