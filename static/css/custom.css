@@ -511,42 +511,31 @@ div[data-refs-self*="TODO"] .block-content:contains("[#C]")::before {
 
 
 
+/* ===================================== */
+/*            EMBEDDING SETTINGS         */
+/* ===================================== */
 
-/* Embed Block */
-.embed-block {
-    margin-top: -16px;
-    margin-left: -56px;
-}
-div.color-level.embed-block.bg-base-2 {
-    background-color: transparent;
-}
 
-/* Embed Page */
-.embed-page {
-    margin-top: -12px;
-    margin-left: -39px;
-}
-div.color-level.embed-page.bg-base-2 {
-    background-color: transparent;
-}
-div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-control-wrap.flex.flex-row.items-center > a.bullet-link-wrap {
-    display: none;
-}
-.embed-page > .embed-header {
-    display: none; /* Hides the page name and header */
-}
 
-/* Cards */
+
+
+
+
+
+
+/*Cards*/
 div[data-refs-self*='"card"'] {
     --tw-shadow: 0;
     --tw-shadow-colored: 0;
 }
+
 div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .references-blocks {
-    display: none;
+	display: none;
 }
 div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .flex > .flex.flex-row.items-center {
-    display: none;
+	display: none;
 }
+
 
 
 
