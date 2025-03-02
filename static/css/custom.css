@@ -515,7 +515,75 @@ div[data-refs-self*="TODO"] .block-content:contains("[#C]")::before {
 /*            EMBEDDING SETTINGS         */
 /* ===================================== */
 
+/* Existing Styles for Embedded Blocks */
+.embed-block {
+  margin-top: -15px;
+  margin-left: -58px;
+}
+div.color-level.embed-block.bg-base-2 {
+  background-color: transparent;
+}
 
+/* Existing Styles for Embedded Pages */
+.embed-page {
+  margin-top: -12px;
+  margin-left: -39px;
+}
+div.color-level.embed-page.bg-base-2 {
+  background-color: transparent;
+}
+div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-control-wrap.flex.flex-row.items-center > a.bullet-link-wrap {
+  display: none;
+}
+.embed-page > .embed-header {
+  margin-left: -20px;
+  font-size: var(--h1-size); /* Match regular h1 size */
+  font-weight: bold; /* Consistent with typical h1 styling */
+}
+
+/* Hide unnecessary header elements */
+.embed-page > .embed-header > div.mr-3 {
+  display: none;
+}
+
+/* Apply heading sizes to embedded page content */
+.embed-page h1 {
+  font-size: var(--h1-size);
+}
+.embed-page h2 {
+  font-size: var(--h2-size);
+}
+.embed-page h3 {
+  font-size: var(--h3-size);
+}
+.embed-page h4 {
+  font-size: var(--h4-size);
+}
+.embed-page h5 {
+  font-size: var(--h5-size);
+}
+
+/* Add an "E" indicator with a hover tooltip */
+.block-content-inner:has(.embed-block)::after,
+.block-content-inner:has(.embed-page)::after {
+  padding-left: 10px; /* Space before the "E" */
+  color: hsl(var(--ct-accent-color)); /* Logseq’s accent color */
+  font-family: var(--ls-font-family-code); /* Code font */
+  font-weight: bold; /* Bold "E" */
+  content: "E"; /* Embed indicator */
+  cursor: pointer; /* Indicate interactivity */
+  position: relative; /* For popup positioning */
+}
+
+/* Style embedded pages in viewer mode to show as a child */
+.block-content-inner .embed-page {
+  margin-left: 20px; /* Indent the embedded page to show it’s a child of the parent block */
+}
+
+/* Style children (blocks) within embedded pages to show as indented children */
+.embed-page .block-content-inner {
+  margin-left: -12px; /* Indent children of the embedded page (adjust to match Logseq’s hierarchy) */
+}
 
 
 
