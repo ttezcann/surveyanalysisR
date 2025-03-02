@@ -13,7 +13,7 @@
   --color-content-text: #121315;  /* page names color in the left side*/
   --color-content-text-bold: #0C0D14;
   --color-content-text-italic: #282A36;
-  --color-link: #3996A3;  /* wikilinks */
+  --color-link: #3996A3;  
   --color-link-ext: #B88726;
   --color-tag-text: #FDFDFD;
   --color-tag: #406E84;
@@ -26,7 +26,7 @@
   --color-ui-rsidebar-bg: #FEFEFE;
   --color-ui-lsidebar-bg: #E7E7E7;
   --color-ui-lsidebar-bg-accent: #479FAD;
-  --color-ui-lsidebar-bg-accent-hover: #266f7a;
+  --color-ui-lsidebar-bg-accent-hover: #7a2626;
   --color-ui-lsidebar-text: #010101;
   --color-ui-body-bg: #FFFFFF;
 
@@ -66,8 +66,7 @@
   --color-inline-code-bg: #D6D8DF;
   --color-inline-code-text: #282A36;
   
-  --ls-main-content-max-width: 1200px;
-
+  --ls-main-content-max-width: 1000px;
 }
 
 
@@ -84,7 +83,6 @@ body {
 	line-height: var(--ct-line-height) !important;
 
 }
-
 
 
 /* ===================================== */
@@ -126,32 +124,38 @@ body {
 
 /* link colors */
 
-.internal-link {
-  color: var(--color-link);
-  text-decoration: none;
-}
-
 .external-link {
   color: var(--color-link-ext); !important; 
-	text-decoration: none !important; /* Optional: Add underline on hover */
+	text-decoration: none !important; 
 
 }
 
 .external-link:hover {
   color: #A06F1A !important; /* Change color when hovered */
-  text-decoration: none !important; /* Optional: Add underline on hover */
+  text-decoration: none !important; 
 }
 
 /* wikilink */
-.page-ref, .block-ref {
-  color: hsl(var(--ls-accent-color)) !important; /* Use the accent color for wiki links */
+
+.page-ref,
+.block-ref,
+.wikilink,
+.internal-link {
+  color: var(--ls-accent-color) !important; 
+  text-decoration: none !important; /* Optional: removes underlines */
 }
 
-.page-ref, .block-ref {
-  color: var(--ls-accent-color) !important;
-}
-.page-ref:hover, .block-ref:hover {
-  color: #2F7C8F !important;
+.page-ref:hover,
+.block-ref:hover,
+.wikilink:hover,
+.internal-link:hover {
+  color: var(--ls-accent-color) !important; 
+  background-color: #E0F2F1 !important; /* Adds a light cyan background highlight on hover */
+  text-decoration: none !important;     /* Removes any text decoration like underlines */
+  border: none !important;              /* Ensures no border is added */
+  outline: none !important;             /* Removes any outline */
+  padding: 0 !important;                /* Removes any padding */
+  border-radius: 0 !important;          /* Removes any border radius */
 }
 
 .block-content-inner:has(.embed-block)::after,
@@ -167,13 +171,6 @@ body {
   color: #2F7C8F !important;
 }
 
-.wikilink {
-    text-decoration: none; /* Remove underline */
-    color: #0D7B8A; /* Default link color */
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Smooth transition */
-    padding: 2px 4px; /* Adds spacing inside */
-    border-radius: 4px; /* Rounded corners for the effect */
-}
 /* wikilink hover effect is determined by logseq accent */
 
 
@@ -183,10 +180,6 @@ body {
 
 .ls-block .editor-wrapper:focus-within {
     background-color: #eaeaea !important;
-    border-radius: 5px !important;
-    padding: 2px !important;
-    margin: -2px !important;
-    outline: 2px solid #ccc !important;
 }
 
 
@@ -201,7 +194,6 @@ code {
     border-radius: 5px !important; /* Smaller rounded corners */
     line-height: 2 !important; /* Reduce line height */
 }
-
 
 
 /* Ensure code blocks are not affected */
@@ -594,7 +586,7 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
 .block-content-inner:has(.embed-block)::after,
 .block-content-inner:has(.embed-page)::after {
   padding-left: 10px; /* Space before the "E" */
-  color: hsl(var(--ct-accent-color)); /* Logseq’s accent color */
+  color: #000000 !important; /* Logseq’s accent color */
   font-family: var(--ls-font-family-code); /* Code font */
   font-weight: bold; /* Bold "E" */
   content: "E"; /* Embed indicator */
