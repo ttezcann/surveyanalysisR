@@ -93,6 +93,76 @@ div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
   display: none;
 }
 
+
+/* Dark Theme Colors */
+.dark-theme {
+  /* General Colors */
+  --color-title-text: #FFFFFF;
+  --color-content-text: #E8E8E8;  /* page names color in the left side*/
+  --color-content-text-bold: #FFFFFF;
+  --color-content-text-italic: #D0D0D0;
+  --color-link: #57C8D6;  /* Brighter cyan for dark mode */
+  --color-link-ext: #E0B54C; /* Brighter gold for dark mode */
+  --color-tag-text: #FDFDFD;
+  --color-tag: #5A89A3; /* Brighter tag bg for dark mode */
+  --color-tag-text-hover: #E0B54C;
+  --ls-accent-color: #57C8D6; /* Brighter cyan */
+  --ct-accent-color: #57C8D6; /* Brighter cyan */
+  /* UI Colors */
+  --color-ui-rsidebar-bg: #1E1E1E;
+  --color-ui-lsidebar-bg: #282828;
+  --color-ui-lsidebar-bg-accent: #57C8D6;
+  --color-ui-lsidebar-bg-accent-hover: #b83f3f;
+  --color-ui-lsidebar-text: #E0E0E0;
+  --color-ui-body-bg: #121212;
+  /* Content Backgrounds */
+  --color-content-props-bg: #2A2A2A;
+  --color-content-alt-bg: #2A2A2A;
+  /* Headings */
+  --color-h1: #FFFFFF;
+  --color-h2: #FFFFFF;
+  --color-h3: #FFFFFF;
+  --color-h4: #FFFFFF;
+  --color-h5: #FFFFFF;
+  --color-h6: #FFFFFF;
+  /* Highlighting */
+  --color-mark-bg: #57C8D6;
+  --color-mark-text: #000000;
+  
+  /* Quotes */
+  --color-quote-bg: #2A2A2A !important;
+  --color-quote-text: #E0E0E0 !important;
+  /* Flashcards */
+  --color-flashcard-bg: #282828;
+  --color-flashcard-text: #E0E0E0;
+  /* Inline Code */
+  --color-inline-code-bg: #333333;
+  --color-inline-code-text: #E0E0E0;
+
+.page-ref:hover,
+.block-ref:hover,
+.wikilink:hover,
+.internal-link:hover {
+  color: var(--ls-accent-color) !important; /* Replace with your desired hover text color */
+  background-color: #5f485f !important;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+/* Page title */
+.title {
+  font-size: 22px !important; /* Adjust as needed */
+  color: #ffffff !important; /* Set desired color */
+  font-weight: bold !important; /* Control weight */
+  text-align: left !important; /* Align as needed */
+  margin-top: 5px !important; /* Adjust spacing */
+  margin-bottom: 5px !important;
+  padding: 0px 0 !important; /* Add padding if necessary */
+}
+
+}
+
 /* ===================================== */
 /*            APPLY FONTS                */
 /* ===================================== */
@@ -107,35 +177,7 @@ body {
 }
 
 
-/* Force light mode and block dark mode */
-html[data-theme='dark'] {
-  filter: invert(0) !important;
-  background-color: #FFFFFF !important;
-}
 
-/* Force light mode for all elements */
-html[data-theme='dark'] * {
-  color-scheme: light !important;
-  background-color: initial;
-}
-
-/* Ensure dark mode toggle has no effect */
-.dark-mode,
-.dark-mode * {
-  background-color: var(--color-ui-body-bg) !important;
-  color: var(--color-content-text) !important;
-}
-
-/* Force Logseq to maintain light theme settings */
-html[data-theme='dark'] .theme-settings {
-  visibility: hidden;
-}
-
-/* Optional: Hide dark mode toggle if available */
-.dark-mode-toggle,
-[data-toggle-theme] {
-  display: none !important;
-}
 
 
 
