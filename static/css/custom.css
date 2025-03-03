@@ -390,6 +390,13 @@ h5, .block-content h5, .ls-block h5 {
 /* ===================================== */
 
 /* Quotes */
+
+:not(pre) > code {
+  font-size: 16px !important; /* Adjust as desired */
+  padding: none !important;
+  line-height: 0px !important;
+}
+
 .blockquote {
   background-color: var(--color-quote-bg) !important;
   color: var(--color-quote-text) !important;
