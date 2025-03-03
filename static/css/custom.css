@@ -68,16 +68,30 @@
   
   /* content sizes */
   --ls-main-content-max-width: 90%;
-  --ls-right-sidebar-width: 35%;
-
-  .sidebar-item.content {
-  font-size: 16px /* or whatever you want */
+  --ls-right-sidebar-width: 40%;
 }
 
+@media screen and (min-width: 992px) {
+  #right-sidebar.open {
+    width: var(--ls-right-sidebar-width) !important;
+  }
 }
 
+/*平板端、移动端*/
+@media screen and (max-width: 992px) {
+  /*调节移动端右侧边栏宽度*/
+  #right-sidebar.open {
+    width: 50vw !important;
+  }
+}
 
+div.my-2.references-blocks-item:has(.page-ref[data-ref="contents"]) {
+  display: none;
+}
 
+div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
+  display: none;
+}
 
 /* ===================================== */
 /*            APPLY FONTS                */
@@ -123,10 +137,7 @@ html[data-theme='dark'] .theme-settings {
   display: none !important;
 }
 
-* {
-  background-color: inherit !important;
-  color: inherit !important;
-}
+
 
 
 /* Apply UI font size to specific UI elements */
@@ -507,8 +518,8 @@ div[data-refs-self*="done"] + div[data-refs-self*="done"] {
 
 /* Existing Styles for Embedded Blocks */
 .embed-block {
-  margin-top: -15px;
-  margin-left: -58px;
+  margin-top: -17px;
+  margin-left: -60px;
 }
 div.color-level.embed-block.bg-base-2 {
   background-color: transparent;
@@ -572,7 +583,7 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
 
 /* Style children (blocks) within embedded pages to show as indented children */
 .embed-page .block-content-inner {
-  margin-left: -12px; /* Indent children of the embedded page (adjust to match Logseq’s hierarchy) */
+  margin-left: -1px; /* Indent children of the embedded page (adjust to match Logseq’s hierarchy) */
 }
 
 
@@ -597,21 +608,4 @@ div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper >
 
 
 
-/* Styles for Auto-Hiding and Revealing on Mouse Hover for Block Properties */
-.block-content-inner:has(+.block-properties)::after {
-  padding-left: 10px;
-  color: hsl(var(--ct-accent-color));
-  font-family: var(--ls-font-family-code);
-  font-weight: bold;
-  content: "P";
-}
 
-.block-properties {
-  display: none;
-}
-
-/* Display Block Properties when hovering over the entire Block element, not just its text */
-.block-main-container:has(.block-properties):hover .block-properties,
-#right-sidebar .block-properties {
-  display: block;
-}
