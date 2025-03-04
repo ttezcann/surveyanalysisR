@@ -68,7 +68,7 @@
   
   /* content sizes */
   --ls-main-content-max-width: 90%;
-  --ls-right-sidebar-width: 40%;
+  --ls-right-sidebar-width: 25%;
 }
 
 @media screen and (min-width: 992px) {
@@ -653,8 +653,3 @@ div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper >
 div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .flex > .flex.flex-row.items-center {
 	display: none;
 }
-
-
-
-
-
