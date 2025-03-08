@@ -71,19 +71,6 @@
   --ls-right-sidebar-width: 25%;
 }
 
-@media screen and (min-width: 992px) {
-  #right-sidebar.open {
-    width: var(--ls-right-sidebar-width) !important;
-  }
-}
-
-/*平板端、移动端*/
-@media screen and (max-width: 992px) {
-  /*调节移动端右侧边栏宽度*/
-  #right-sidebar.open {
-    width: 50vw !important;
-  }
-}
 
 div.my-2.references-blocks-item:has(.page-ref[data-ref="contents"]) {
   display: none;
@@ -175,10 +162,6 @@ body {
 	line-height: var(--ct-line-height) !important;
 
 }
-
-
-
-
 
 
 
@@ -294,10 +277,12 @@ button, .btn                    /* Buttons */
 
 /* Reduce the size of inline code blocks (e.g., keyboard shortcuts) */
 code {
-    font-size: 11px !important;  /* Smaller font */
-    padding: 1px 3px !important; /* Reduce padding */
-    border-radius: 5px !important; /* Smaller rounded corners */
-    line-height: 2 !important; /* Reduce line height */
+  font-size: 11px !important;  /* Smaller font */
+  padding: 1px 3px !important; /* Reduce padding */
+  border-radius: 5px !important; /* Smaller rounded corners */
+  line-height: 2 !important; /* Reduce line height */
+  background-color: #babdc1 !important; /* Light gray background */
+  color: #000000 !important; /* Dark gray text */
 }
 
 
@@ -473,6 +458,20 @@ h5, .block-content h5, .ls-block h5 {
 @media (max-width: 768px) {
   .sidebar-left, .sidebar-right {
     width: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #right-sidebar.open {
+    width: var(--ls-right-sidebar-width) !important;
+  }
+}
+
+/*平板端、移动端*/
+@media screen and (max-width: 992px) {
+  /*调节移动端右侧边栏宽度*/
+  #right-sidebar.open {
+    width: 50vw !important;
   }
 }
 
