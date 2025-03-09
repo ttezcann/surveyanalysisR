@@ -69,6 +69,7 @@
   /* content sizes */
   --ls-main-content-max-width: 90%;
   --ls-right-sidebar-width: 25%;
+  
 }
 
 
@@ -271,26 +272,6 @@ button, .btn                    /* Buttons */
 }
 
 
-/* ===================================== */
-/*            CODE                      */
-/* ===================================== */
-
-/* Reduce the size of inline code blocks (e.g., keyboard shortcuts) */
-code {
-  font-size: 11px !important;  /* Smaller font */
-  padding: 1px 3px !important; /* Reduce padding */
-  border-radius: 5px !important; /* Smaller rounded corners */
-  line-height: 2 !important; /* Reduce line height */
-  background-color: #d6d8dc !important; /* Light gray background */
-  color: #383535 !important; /* Dark gray text */
-}
-
-
-/* Ensure code blocks are not affected */
-pre code {
-    font-size: inherit !important;
-    padding: inherit !important;
-}
 
 
 /* ===================================== */
@@ -413,13 +394,30 @@ h5, .block-content h5, .ls-block h5 {
 
 
 /* ===================================== */
-/*            QUOTES and FLASHCARDS      */
+/*     CODES, QUOTES and FLASHCARDS      */
 /* ===================================== */
+
+/* Reduce the size of inline code blocks (e.g., keyboard shortcuts) */
+code {
+  font-size: 11px !important;  /* Smaller font */
+  padding: 1px 1px !important; /* Reduce padding */
+  border-radius: 5px !important; /* Smaller rounded corners */
+  line-height: 1 !important; /* Reduce line height */
+  background-color: #d6d8dc !important; /* Light gray background */
+  color: #383535 !important; /* Dark gray text */
+}
+
+
+/* Ensure code blocks are not affected */
+pre code {
+    font-size: inherit !important;
+    padding: inherit !important;
+}
 
 /* Quotes */
 
 :not(pre) > code {
-  font-size: 16px !important; /* Adjust as desired */
+  font-size: 14px !important; /* Adjust as desired */
   padding: none !important;
   line-height: 0px !important;
 }
@@ -635,8 +633,12 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
 }
 
 
+/* Make all external links open in new tabs */
+a.external-link {
+  target: _blank;
+}
 
-
+/* Alternative approach using JavaScript */
 
 
 
