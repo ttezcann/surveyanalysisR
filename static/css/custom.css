@@ -43,10 +43,10 @@
   --color-h5: #030303;
   --color-h6: #030303;
   --h1-size: 18px;
-  --h2-size: 17px;
-  --h3-size: 16px;
-  --h4-size: 15px;
-  --h5-size: 14px;
+  --h2-size: 18px;
+  --h3-size: 18px;
+  --h4-size: 16px;
+  --h5-size: 17px;
 
   /* Highlighting */
   --color-mark-bg: #3996A3;
@@ -261,6 +261,17 @@ button, .btn                    /* Buttons */
 .block-content-inner:has(.embed-block)::after,
 .block-content-inner:has(.embed-page)::after {
   color: var(--ct-accent-color) !important;
+}
+
+/* Custom styling for code blocks in Logseq */
+.CodeMirror pre.CodeMirror-line,
+.custom-query-title + .custom-query-results pre,
+pre.CodeMirror-line,
+.block-content pre {
+  font-family: Arial, sans-serif; /* Change to your preferred font */
+  font-size: 16px; /* Adjust size as needed */
+  line-height: 1.5; /* Optional: improve readability with line spacing */
+  color: #000000; /* Optional: change text color */
 }
 
 
