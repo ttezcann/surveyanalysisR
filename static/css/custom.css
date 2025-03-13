@@ -1,9 +1,6 @@
 /* ========================================================================
    1. ROOT VARIABLES
    
-   CSS variables allow us to define values once and reuse them throughout
-   the stylesheet. This makes it easy to maintain a consistent theme and
-   quickly make changes that affect the entire design.
    ======================================================================== */
 
    :root {
@@ -17,7 +14,7 @@
   
     /* General Colors */
     --color-title-text: #000000; /* Page title text color */
-    --color-content-text: #121315; /* Main content text color */
+    --color-content-text: #1A1A1A; /* Main content text color */
     --color-content-text-bold: #0C0D14; /* Bold text color */
     --color-content-text-italic: #282A36; /* Italic text color */
     --color-link: #3996A3; /* Internal link color */
@@ -86,16 +83,14 @@
   
   /* ===================================== */
   /*          DARK MODE VARIABLES          */
-  /* ===================================== */
-  /* Overrides variables for dark mode to ensure proper contrast and visibility. */
-  
+  /* ===================================== */  
   .dark-theme {
     /* General Colors */
     --color-title-text: #FFFFFF; /* Title text color */
-    --color-content-text: #E8E8E8; /* Main content text color */
+    --color-content-text: #F0F0F0; /* Main content text color */
     --color-content-text-bold: #FFFFFF; /* Bold text color */
     --color-content-text-italic: #D0D0D0; /* Italic text color */
-    --color-link: #57C8D6; /* Internal link color */
+    --color-link: #68D4E3; /* Internal link color */
     --color-link-ext: #E0B54C; /* External link color */
     --color-tag-text: #FDFDFD; /* Tag text color */
     --color-tag: #5A89A3; /* Tag background color */
@@ -109,7 +104,7 @@
     --color-ui-lsidebar-bg-accent: #57C8D6; /* Left sidebar accent */
     --color-ui-lsidebar-bg-accent-hover: #264653; /* Left sidebar hover accent */
     --color-ui-lsidebar-text: #E0E0E0; /* Left sidebar text color */
-    --color-ui-body-bg: #121212; /* Main body background */
+    --color-ui-body-bg: #1A1A1A; /* Main body background */
     --color-rightsidebar-navigation-text: #ffffff; /* Adjust for dark mode contrast */
     --color-leftsidebar-navigation-text: #ffffff; /* rightsidebar-navigation-text */
 
@@ -144,7 +139,7 @@
     --color-flashcard-text: #E0E0E0; /* Flashcard text */
   
     /* Inline Code */
-    --color-inline-code-bg: #333333; /* Inline code background */
+    --color-inline-code-bg: #2A2A2A; /* Inline code background */
     --color-inline-code-text: #E0E0E0; /* Inline code text */
   }
   
@@ -175,7 +170,6 @@
   color: var(--color-rightsidebar-navigation-text);
 }
 
-
 .cp__right-sidebar, .cp__header, .nav-link, .nav-link.help, .nav-link:hover {
   font-size: var(--font-ui-size);
   background-color: var(--color-ui-lsidebar-bg-accent-hover);
@@ -183,99 +177,82 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-  .block-properties {
+.block-properties {
     background-color: var(--color-content-props-bg) !important; /* Sets background for block properties */
     padding: 4px 6px; /* Adds padding inside block properties */
     border-radius: 4px; /* Rounds corners of block properties */
   }
   
-  .content {
+.content {
     background-color: var(--color-content-bg); /* Sets background for main content */
-    max-width: var(--content-max-width); /* Sets max-width for content */
   }
   
-  .alt-bg {
+.alt-bg {
     background-color: var(--color-content-alt-bg); /* Sets alternative background */
   }
   
-  .sidebar-accent {
+.sidebar-accent {
     background-color: var(--color-ui-lsidebar-bg-accent) !important; /* Sets accent background for sidebar */
   }
   
-  .sidebar-text {
+.sidebar-text {
     color: var(--color-ui-lsidebar-text); /* Sets text color for sidebar */
   }
   
-  .external-link {
+.external-link {
     color: var(--color-link-ext) !important; /* Sets color for external links */
     text-decoration: none !important; /* Removes underline from external links */
   }
   
-  .external-link:hover {
+.external-link:hover {
     color: #A06F1A !important; /* Darkens external link color on hover */
   }
   
-  .page-ref, .block-ref, .wikilink, .internal-link {
+.page-ref, .block-ref, .wikilink, .internal-link {
     color: var(--ls-accent-color) !important; /* Sets color for internal links */
     text-decoration: none !important; /* Removes underline from internal links */
   }
   
 
   
-  a:hover, button:hover {
+a:hover, button:hover {
     color: var(--ct-accent-color); /* Changes text color on hover for links and buttons */
   }
   
-  .CodeMirror pre.CodeMirror-line, .custom-query-title + .custom-query-results pre,
+.CodeMirror pre.CodeMirror-line, .custom-query-title + .custom-query-results pre,
   pre.CodeMirror-line, .block-content pre {
     font-family: Arial, sans-serif; /* Sets font for code blocks */
     font-size: 16px; /* Sets font size for code blocks */
     line-height: 1.5; /* Sets line height for code blocks */
     color: var(--color-inline-code-text); /* Sets text color for code blocks */
+    background-color: var(--color-inline-code-bg);
+    border-radius: 4px;
   }
   
-  .ls-block .editor-wrapper:focus-within {
+.ls-block .editor-wrapper:focus-within {
     background-color: #eaeaea !important; /* Highlights block in edit mode (light mode) */
   }
   
-  .dark-theme .ls-block .editor-wrapper:focus-within {
-    background-color: #333333 !important; /* Highlights block in edit mode (dark mode) */
+.dark-theme .ls-block .editor-wrapper:focus-within {
+    background-color: #5a5858 !important; /* Highlights block in edit mode (dark mode) */
   }
   
   /* Applies styles for bold and italic text */
-  strong, b {
+strong, b {
     color: var(--color-content-text-bold); /* Sets color for bold text */
   }
   
-  em, i {
+em, i {
     color: var(--color-content-text-italic); /* Sets color for italic text */
   }
-  
-  /* Applies background colors to sidebars */
-  .cp__right-sidebar {
-    background-color: var(--color-ui-rsidebar-bg); /* Sets background for right sidebar */
-  }
-  
-  .cp__left-sidebar {
-    background-color: var(--color-ui-lsidebar-bg); /* Sets background for left sidebar */
-  }
+ 
   
   /* ===================================== */
   /*            PAGE TITLE                 */
   /* ===================================== */
   /* Styles the page title consistently across themes. */
   
-  .title {
+.title {
     font-size: 22px !important; /* Sets font size for page titles */
     color: var(--color-title-text) !important; /* Sets title color using variable */
     font-weight: bold !important; /* Makes title bold */
@@ -364,10 +341,7 @@
     margin-bottom: 4px !important; /* Adds bottom margin to paragraphs */
   }
   
-  #main-content-container {
-    max-width: var(--ls-main-content-max-width); /* Sets max-width for main content area */
-    margin: 0 auto; /* Centers the content */
-  }
+ 
   
   /* ===================================== */
   /*            TAGS                       */
@@ -384,8 +358,7 @@
     font-size: var(--font-content-size); /* Sets tag font size */
     display: inline-block !important; /* Ensures inline display */
     text-decoration: none !important; /* Removes underline */
-    transition: color 0.2s ease-in-out; 
-    border: 1px solid var(--ls-accent-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);/* Smooth color transition on hover */
   }
   
@@ -453,62 +426,32 @@
   /* ===================================== */
   /* Various miscellaneous styles. */
   
-  @media (max-width: 768px) {
-    .tag { font-size: 16px; }
+ /* More comprehensive mobile optimization */
+@media (max-width: 768px) {
+  :root {
+    --font-content-size: 16px; /* Slightly smaller for mobile */
+    --font-ui-size: 15px; /* Smaller UI text on mobile */
   }
   
-  @media screen and (min-width: 992px) {
-    #right-sidebar.open {
-      width: var(--ls-right-sidebar-width) !important; /* Sets right sidebar width on large screens */
-    }
+  .embed-block {
+    margin-left: -20px; /* Reduce negative margins on mobile */
+    margin-right: -20px;
   }
   
+  .tag {
+    padding: 4px 6px !important; /* Larger touch target on mobile */
+  }
+}
 
-  
-  .rotating-arrow svg {
-    fill: #266f7a; /* Sets toggle arrow color */
-    height: 20px; /* Sets arrow height */
+/* Add tablet-specific optimizations */
+@media (min-width: 769px) and (max-width: 1200px) {
+  :root {
+    --ls-main-content-max-width: 90%; /* Proportional content width */
+    --ls-right-sidebar-width: 35%; /* Slightly narrower sidebar */
   }
-  
-  .block-control .control-hide:has(.rotating-arrow.collapsed) {
-    display: inline; /* Ensures control remains visible when collapsed */
-  }
-  
-  .bullet-container:not(.typed-list).bullet-closed,
-  .bullet-container.bullet-closed {
-    background-color: #266f7a !important; /* Sets closed bullet color */
-    border-radius: 70% !important; /* Makes bullet round */
-    width: 12px !important; /* Sets bullet width */
-    height: 12px !important; /* Sets bullet height */
-    opacity: 1 !important; /* Ensures full opacity */
-  }
-  
-  .bullet-container:not(.typed-list).bullet-closed::before,
-  .bullet-container.bullet-closed::before {
-    display: none !important; /* Hides pseudo-element */
-  }
-  
-  ol.block-body .bullet-container.bullet-closed,
-  .ls-block[data-refs-self*='"block-content-type","numbered"'] .bullet-container.bullet-closed {
-    background-color: #68C3D0 !important; /* Sets bullet color for numbered lists */
-    border-color: #68C3D0 !important; /* Sets border color */
-  }
-  
-  .blocks-container .ls-block.collapsed .bullet-container {
-    background-color: #68C3D0 !important; /* Sets bullet color when collapsed */
-    border-color: #68C3D0 !important; /* Sets border color */
-  }
-  
-  .time-spent {
-    padding-left: 1px; /* Adds left padding to time tracking */
-    text-wrap: nowrap; /* Prevents wrapping */
-    font-weight: bold; /* Makes text bold */
-  }
-  
-  .logbook,
-  .block-properties .property-key[data-ref="logbook"] {
-    font-size: 11px; /* Sets smaller font for logbook */
-  }
+}
+
+
   
   .page-reference {
     transform: none !important; /* Disables transformations */
@@ -530,77 +473,74 @@
     display: none; /* Hides specific reference blocks */
   }
   
+
   /* ===================================== */
-  /*     PAGE AND BLOCK EMBEDDING          */
+/*            EMBEDDING SETTINGS         */
+/* ===================================== */
+
+/* ===================================== */
+/*            EMBEDDING SETTINGS         */
+/* ===================================== */
+
+/* Existing Styles for Embedded Blocks */
+.embed-block {
+  margin-top: -12px;
+  margin-left: -39px;
+}
+div.color-level.embed-block.bg-base-2 {
+  background-color: transparent;
+}
+
+/* Existing Styles for Embedded Pages */
+.embed-page {
+  margin-top: -12px;
+  margin-left: -39px;
+}
+div.color-level.embed-page.bg-base-2 {
+  background-color: transparent;
+}
+div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-control-wrap.flex.flex-row.items-center > a.bullet-link-wrap {
+  display: none;
+}
+.embed-page > .embed-header {
+  margin-left: 8px;
+}
+.embed-page > .embed-header > div.mr-3 {
+  display: none;
+}
+
+/* Add an "E" indicator with a hover tooltip */
+.block-content-inner:has(.embed-block)::after,
+.block-content-inner:has(.embed-page)::after {
+  padding-left: 10px; /* Space before the "E" */
+  color: hsl(var(--ct-accent-color)); /* Logseq’s accent color */
+  font-family: var(--ls-font-family-code); /* Code font */
+  font-weight: bold; /* Bold "E" */
+  content: "E"; /* Embed indicator */
+  cursor: pointer; /* Indicate interactivity */
+  position: relative; /* For popup positioning */
+}
+
+
+   /* ===================================== */
+  /*            ARROW              */
   /* ===================================== */
-  /* Styles embedded blocks and pages. */
-  
-  .embed-block {
-    margin-top: -17px; /* Adjusts top margin */
-    margin-left: -60px; /* Adjusts left margin */
+
+ 
+/* shape of the toggling arrow */
+
+.rotating-arrow svg {
+  fill: #064953;
+  height: 24px;
+}
+
+.dark-theme .rotating-arrow svg {
+  fill: #9adee8;
+  height: 24px;
+}
+
+.block-control .control-hide:has(.rotating-arrow.collapsed) {
+  display: inline;
   }
-  
-  div.color-level.embed-block.bg-base-2 {
-    background-color: transparent; /* Makes background transparent */
-  }
-  
-  .embed-page {
-    margin-top: -12px; /* Adjusts top margin */
-    margin-left: -39px; /* Adjusts left margin */
-  }
-  
-  div.color-level.embed-page.bg-base-2 {
-    background-color: transparent; /* Makes background transparent */
-  }
-  
-  div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-control-wrap.flex.flex-row.items-center > a.bullet-link-wrap {
-    display: none; /* Hides bullet link in embedded pages */
-  }
-  
-  .embed-page > .embed-header {
-    margin-left: -20px; /* Adjusts header margin */
-    font-size: var(--h1-size); /* Sets header size */
-    font-weight: bold; /* Makes header bold */
-  }
-  
-  .embed-page > .embed-header > div.mr-3 {
-    display: none; /* Hides specific elements in header */
-  }
-  
-  .embed-page h1 { font-size: var(--h1-size); }
-  .embed-page h2 { font-size: var(--h2-size); }
-  .embed-page h3 { font-size: var(--h3-size); }
-  .embed-page h4 { font-size: var(--h4-size); }
-  .embed-page h5 { font-size: var(--h5-size); }
-  
-  .block-content-inner:has(.embed-block)::after,
-  .block-content-inner:has(.embed-page)::after {
-    padding-left: 10px; /* Adds space before "E" */
-    color: var(--color-content-text) !important; /* Sets "E" color */
-    font-family: var(--ls-font-family); /* Sets font for "E" */
-    font-weight: bold; /* Makes "E" bold */
-    content: "E"; /* Adds "E" indicator */
-    cursor: pointer; /* Makes "E" clickable */
-    position: relative; /* Positions for potential tooltips */
-  }
-  
-  .block-content-inner .embed-page {
-    margin-left: 20px; /* Indents embedded pages */
-  }
-  
-  .embed-page .block-content-inner {
-    margin-left: -1px; /* Adjusts indentation */
-  }
-  
-  div[data-refs-self*='"card"'] {
-    --tw-shadow: 0; /* Removes shadow from card blocks */
-    --tw-shadow-colored: 0; /* Removes colored shadow */
-  }
-  
-  div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .references-blocks {
-    display: none; /* Hides references in card blocks */
-  }
-  
-  div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .flex > .flex.flex-row.items-center {
-    display: none; /* Hides flex elements in card blocks */
-  }
+
+ 
