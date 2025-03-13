@@ -1,667 +1,606 @@
-/* Custom CSS from Awesome Styler Plugin */
-:root {
-  /* Font Settings */
-  --ls-font-family: "OS System default", sans-serif; 
-  --font-content: "OS System default", sans-serif;
-  --font-content-size: 18px;
-  --ct-line-height: 1.2;
-  --font-ui: "OS System default", sans-serif;
-  --font-ui-size: 17px;
+/* ========================================================================
+   1. ROOT VARIABLES
+   
+   CSS variables allow us to define values once and reuse them throughout
+   the stylesheet. This makes it easy to maintain a consistent theme and
+   quickly make changes that affect the entire design.
+   ======================================================================== */
 
-  /* General Colors */
-  --color-title-text: #000000;
-  --color-content-text: #121315;  /* page names color in the left side*/
-  --color-content-text-bold: #0C0D14;
-  --color-content-text-italic: #282A36;
-  --color-link: #3996A3;  
-  --color-link-ext: #B88726;
-  --color-tag-text: #FDFDFD;
-  --color-tag: #406E84;
-  --color-tag-text-hover: #B88726;
-  --ls-accent-color: #3996A3; /* Cyan */
-  --ct-accent-color: #3996A3; /* Cyan */
-
-
-  /* UI Colors */
-  --color-ui-rsidebar-bg: #FEFEFE;
-  --color-ui-lsidebar-bg: #E7E7E7;
-  --color-ui-lsidebar-bg-accent: #479FAD;
-  --color-ui-lsidebar-bg-accent-hover: #7a2626;
-  --color-ui-lsidebar-text: #010101;
-  --color-ui-body-bg: #FFFFFF;
-
-  /* Content Backgrounds */
-  --color-content-props-bg: #dadad9;
-  --color-content-alt-bg: #dadad9;
-
-
-  /* Headings */
-  --color-h1: #030303;
-  --color-h2: #030303;
-  --color-h3: #030303;
-  --color-h4: #030303;
-  --color-h5: #030303;
-  --color-h6: #030303;
-  --h1-size: 18px;
-  --h2-size: 18px;
-  --h3-size: 18px;
-  --h4-size: 16px;
-  --h5-size: 17px;
-
-  /* Highlighting */
-  --color-mark-bg: #3996A3;
-  --color-mark-text: #F4F4F4;
-  --ls-highlight-color: var(--color-mark-bg) !important;
-
-	
-  /* Quotes */
-  --color-quote-bg: #EAEAE5 !important;; 
-  --color-quote-text: #000000 !important;;
-
-  /* Flashcards */
-  --color-flashcard-bg: #FEFEFE;
-  --color-flashcard-text: #282A36;
-
-  /* Inline Code */
-  --color-inline-code-bg: #D6D8DF;
-  --color-inline-code-text: #282A36;
+   :root {
+    /* Font Settings */
+    --ls-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-content: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-content-size: 18px; /* Size of content text */
+    --ct-line-height: 1.2; /* Line height multiplier for content */
+    --font-ui: "OS System default", sans-serif; /* Font for UI elements */
+    --font-ui-size: 17px; /* Size of UI text */
   
-  /* content sizes */
-  --ls-main-content-max-width: 90%;
-  --ls-right-sidebar-width: 25%;
+    /* General Colors */
+    --color-title-text: #000000; /* Page title text color */
+    --color-content-text: #121315; /* Main content text color */
+    --color-content-text-bold: #0C0D14; /* Bold text color */
+    --color-content-text-italic: #282A36; /* Italic text color */
+    --color-link: #3996A3; /* Internal link color */
+    --color-link-ext: #B88726; /* External link color */
+    --color-tag-text: #FDFDFD; /* Tag text color */
+    --color-tag: #406E84; /* Tag background color */
+    --color-tag-text-hover: #B88726; /* Tag text hover color */
+    --ls-accent-color: #3996A3; /* Main accent color (Cyan) */
+    --ct-accent-color: #406E84; /* Secondary accent color (Cyan) */
   
-}
+    /* UI Colors */
+    --color-ui-rsidebar-bg: #FEFEFE; /* Right sidebar background */
+    --color-ui-lsidebar-bg: #E7E7E7; /* Left sidebar background */
+    --color-ui-lsidebar-bg-accent: #479FAD; /* Left sidebar accent color */
+    --color-ui-lsidebar-bg-accent-hover: #d1d1d1    ; /* Left sidebar hover accent */
+    --color-leftsidebar-navigation-text: #ffffff; /* rightsidebar-navigation-text */
+    --color-rightsidebar-navigation-text: #000000; /* rightsidebar-navigation-text */
+    --color-ui-lsidebar-text: #010101; /* Left sidebar text color */
+    --color-ui-body-bg: #FFFFFF; /* Main body background color */
 
-
-div.my-2.references-blocks-item:has(.page-ref[data-ref="contents"]) {
-  display: none;
-}
-
-div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
-  display: none;
-}
-
-
-/* Dark Theme Colors */
-.dark-theme {
-  /* General Colors */
-  --color-title-text: #FFFFFF;
-  --color-content-text: #E8E8E8;  /* page names color in the left side*/
-  --color-content-text-bold: #FFFFFF;
-  --color-content-text-italic: #D0D0D0;
-  --color-link: #57C8D6;  /* Brighter cyan for dark mode */
-  --color-link-ext: #E0B54C; /* Brighter gold for dark mode */
-  --color-tag-text: #FDFDFD;
-  --color-tag: #5A89A3; /* Brighter tag bg for dark mode */
-  --color-tag-text-hover: #E0B54C;
-  --ls-accent-color: #57C8D6; /* Brighter cyan */
-  --ct-accent-color: #57C8D6; /* Brighter cyan */
-  /* UI Colors */
-  --color-ui-rsidebar-bg: #1E1E1E;
-  --color-ui-lsidebar-bg: #282828;
-  --color-ui-lsidebar-bg-accent: #57C8D6;
-  --color-ui-lsidebar-bg-accent-hover: #b83f3f;
-  --color-ui-lsidebar-text: #E0E0E0;
-  --color-ui-body-bg: #121212;
-  /* Content Backgrounds */
-  --color-content-props-bg: #2A2A2A;
-  --color-content-alt-bg: #2A2A2A;
-  /* Headings */
-  --color-h1: #FFFFFF;
-  --color-h2: #FFFFFF;
-  --color-h3: #FFFFFF;
-  --color-h4: #FFFFFF;
-  --color-h5: #FFFFFF;
-  --color-h6: #FFFFFF;
-  /* Highlighting */
-  --color-mark-bg: #57C8D6;
-  --color-mark-text: #000000;
+    /* icon colors */
+    --icon-color-light: #ffffff; /* Light mode color */
   
-  /* Quotes */
-  --color-quote-bg: #2A2A2A !important;
-  --color-quote-text: #E0E0E0 !important;
-  /* Flashcards */
-  --color-flashcard-bg: #282828;
-  --color-flashcard-text: #E0E0E0;
-  /* Inline Code */
-  --color-inline-code-bg: #333333;
-  --color-inline-code-text: #E0E0E0;
+    /* Content Backgrounds */
+    --color-content-bg: #FFFFFF; /* Background for main content */
+    --color-content-props-bg: #dadad9; /* Block properties background */
+    --color-content-alt-bg: #dadad9; /* Alternative content background */
+    --color-bullet-closed: #266f7a;
+    --color-bullet-numbered: #68C3D0;
+  
+    /* Headings */
+    --color-h1: #030303; /* H1 heading color */
+    --color-h2: #030303; /* H2 heading color */
+    --color-h3: #030303; /* H3 heading color */
+    --color-h4: #030303; /* H4 heading color */
+    --color-h5: #030303; /* H5 heading color */
+    --color-h6: #030303; /* H6 heading color */
+    --h1-size: 18px; /* H1 font size */
+    --h2-size: 18px; /* H2 font size */
+    --h3-size: 18px; /* H3 font size */
+    --h4-size: 16px; /* H4 font size */
+    --h5-size: 17px; /* H5 font size */
+  
+    /* Highlighting */
+    --color-mark-bg: #3996A3; /* Highlight background color */
+    --color-mark-text: #F4F4F4; /* Highlighted text color */
+    --ls-highlight-color: var(--color-mark-bg) !important; /* Logseq highlight color */
+  
+    /* Quotes */
+    --color-quote-bg: #EAEAE5 !important; /* Quote background color */
+    --color-quote-text: #000000 !important; /* Quote text color */
+  
+    /* Flashcards */
+    --color-flashcard-bg: #FEFEFE; /* Flashcard background color */
+    --color-flashcard-text: #282A36; /* Flashcard text color */
+  
+    /* Inline Code */
+    --color-inline-code-bg: #D6D8DF; /* Inline code background color */
+    --color-inline-code-text: #282A36; /* Inline code text color */
+  
+    /* Content Sizes */
+      --ls-main-content-max-width: 1000px; /* Fixed max width for main content */
+      --ls-right-sidebar-width: 40%; /* Proportional sidebar width */
+      --content-max-width: 100%; /* Flexible width for .content */
+  }
+  
+  /* ===================================== */
+  /*          DARK MODE VARIABLES          */
+  /* ===================================== */
+  /* Overrides variables for dark mode to ensure proper contrast and visibility. */
+  
+  .dark-theme {
+    /* General Colors */
+    --color-title-text: #FFFFFF; /* Title text color */
+    --color-content-text: #E8E8E8; /* Main content text color */
+    --color-content-text-bold: #FFFFFF; /* Bold text color */
+    --color-content-text-italic: #D0D0D0; /* Italic text color */
+    --color-link: #57C8D6; /* Internal link color */
+    --color-link-ext: #E0B54C; /* External link color */
+    --color-tag-text: #FDFDFD; /* Tag text color */
+    --color-tag: #5A89A3; /* Tag background color */
+    --color-tag-text-hover: #E0B54C; /* Tag hover text color */
+    --ls-accent-color: #57C8D6; /* Accent color */
+    --ct-accent-color: #57C8D6; /* Secondary accent color */
+  
+    /* UI Colors */
+    --color-ui-rsidebar-bg: #1E1E1E; /* Right sidebar background */
+    --color-ui-lsidebar-bg: #282828; /* Left sidebar background */
+    --color-ui-lsidebar-bg-accent: #57C8D6; /* Left sidebar accent */
+    --color-ui-lsidebar-bg-accent-hover: #264653; /* Left sidebar hover accent */
+    --color-ui-lsidebar-text: #E0E0E0; /* Left sidebar text color */
+    --color-ui-body-bg: #121212; /* Main body background */
+    --color-rightsidebar-navigation-text: #ffffff; /* Adjust for dark mode contrast */
+    --color-leftsidebar-navigation-text: #ffffff; /* rightsidebar-navigation-text */
 
-.page-ref:hover,
-.block-ref:hover,
-.wikilink:hover,
-.internal-link:hover {
-  color: var(--ls-accent-color) !important; /* Replace with your desired hover text color */
-  background-color: #5f485f !important;
-  text-decoration: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-/* Page title */
-.title {
-  font-size: 22px !important; /* Adjust as needed */
-  color: #ffffff !important; /* Set desired color */
-  font-weight: bold !important; /* Control weight */
-  text-align: left !important; /* Align as needed */
-  margin-top: 5px !important; /* Adjust spacing */
-  margin-bottom: 5px !important;
-  padding: 0px 0 !important; /* Add padding if necessary */
-}
+    /* icon colors */
+    --icon-color-dark: #ffffff;  /* Dark mode color */
+  
+    /* Content Backgrounds */
+    --color-content-bg: #121212; /* Main content background */
+    --color-content-props-bg: #2A2A2A; /* Block properties background */
+    --color-content-alt-bg: #2A2A2A; /* Alternative content background */
+    --color-bullet-closed: #57C8D6; /* Adjusted for dark mode */
+    --color-bullet-numbered: #57C8D6;
+  
+    /* Headings */
+    --color-h1: #FFFFFF; /* H1 color */
+    --color-h2: #FFFFFF; /* H2 color */
+    --color-h3: #FFFFFF; /* H3 color */
+    --color-h4: #FFFFFF; /* H4 color */
+    --color-h5: #FFFFFF; /* H5 color */
+    --color-h6: #FFFFFF; /* H6 color */
+  
+    /* Highlighting */
+    --color-mark-bg: #054e4f; /* Highlight background */
+    --color-mark-text: #FFFFFF; /* Highlight text (changed for visibility) */
+  
+    /* Quotes */
+    --color-quote-bg: #2A2A2A !important; /* Quote background */
+    --color-quote-text: #E0E0E0 !important; /* Quote text */
+  
+    /* Flashcards */
+    --color-flashcard-bg: #282828; /* Flashcard background */
+    --color-flashcard-text: #E0E0E0; /* Flashcard text */
+  
+    /* Inline Code */
+    --color-inline-code-bg: #333333; /* Inline code background */
+    --color-inline-code-text: #E0E0E0; /* Inline code text */
+  }
+  
+  /* ===================================== */
+  /*            BASE STYLES                */
+  /* ===================================== */
+  /* Applies font and color settings to the body and various elements. */
+  
+  body {
+    font-family: var(--font-content); /* Sets the font for the entire body */
+    font-size: var(--font-content-size); /* Sets the font size for content */
+    background-color: var(--color-ui-body-bg); /* Sets the body background color */
+    color: var(--color-content-text); /* Sets the default text color */
+    line-height: var(--ct-line-height) !important; /* Applies custom line height */
+  }
+  
 
-}
-
-/* ===================================== */
-/*            APPLY FONTS                */
-/* ===================================== */
-
-body {
-  font-family: var(--font-content);
-  font-size: var(--font-content-size);
-	background-color: var(--color-ui-body-bg);
-  color: var(--color-content-text);
-	line-height: var(--ct-line-height) !important;
-
-}
-
-
-
-/* Apply UI font size to specific UI elements */
-.cp__left-sidebar,              /* Left sidebar */
-.cp__right-sidebar,             /* Right sidebar */
-.cp__header,                    /* Header or top bar */
-.nav-link,                      /* Navigation links */
-button, .btn                    /* Buttons */
-{
+/* General UI element styles */
+.cp__left-sidebar, .cp__header, .sidebar-header, .nav-link, .nav-link.help, .nav-link:hover {
   font-size: var(--font-ui-size);
+  background-color: var(--color-ui-lsidebar-bg-accent-hover);
+  color: var(--color-rightsidebar-navigation-text);
 }
 
-/* Target left sidebar text and buttons */
-.cp__left-sidebar a,
-.cp__left-sidebar .nav-link,
-.btn {
-  font-size: var(--font-ui-size) !important;
-}
-
-/* ===================================== */
-/*            COLORS                     */
-/* ===================================== */
-
-/* General Linked References Background */
-
-.block-properties {
-    background-color: var(--color-content-props-bg) !important;
-    padding: 4px 6px;
-    border-radius: 4px;
+.button, .btn {
+  font-size: var(--font-ui-size);
+  background-color: var(--color-ui-lsidebar-bg-accent-hover);
+  color: var(--color-rightsidebar-navigation-text);
 }
 
 
-/* Content Background */
-.content {
-  background-color: var(--color-content-bg);
-  max-width: var(--content-max-width);
-}
-
-
-/* Content Alternative Background */
-.alt-bg {
-  background-color: var(--color-content-alt-bg);
-}
-
-/* Sidebar Accent */
-.sidebar-accent {
-  background-color: var(--color-ui-lsidebar-bg-accent) !important;
-}
-
-
-/* Sidebar Text */
-.sidebar-text {
-  color: var(--color-ui-lsidebar-text);
-}
-
-
-/* link colors */
-
-.external-link {
-  color: var(--color-link-ext); !important; 
-	text-decoration: none !important; 
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-.external-link:hover {
-  color: #A06F1A !important; /* Change color when hovered */
-  text-decoration: none !important; 
-}
-
-/* wikilink */
-
-.page-ref,
-.block-ref,
-.wikilink,
-.internal-link {
-  color: var(--ls-accent-color) !important; 
-  text-decoration: none !important; /* Optional: removes underlines */
-}
-
-.page-ref:hover,
-.block-ref:hover,
-.wikilink:hover,
-.internal-link:hover {
-  color: var(--ls-accent-color) !important; /* Replace with your desired hover text color */
-  background-color: #cfe8e9 !important;
-  text-decoration: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-
-.block-content-inner:has(.embed-block)::after,
-.block-content-inner:has(.embed-page)::after {
-  color: var(--ct-accent-color) !important;
-}
-
-/* Custom styling for code blocks in Logseq */
-.CodeMirror pre.CodeMirror-line,
-.custom-query-title + .custom-query-results pre,
-pre.CodeMirror-line,
-.block-content pre {
-  font-family: Arial, sans-serif; /* Change to your preferred font */
-  font-size: 16px; /* Adjust size as needed */
-  line-height: 1.5; /* Optional: improve readability with line spacing */
-  color: #000000; /* Optional: change text color */
-}
-
-
-/* Highlight entire block when in editor mode */
-
-
-.ls-block .editor-wrapper:focus-within {
-    background-color: #eaeaea !important;
+.cp__right-sidebar, .cp__header, .nav-link, .nav-link.help, .nav-link:hover {
+  font-size: var(--font-ui-size);
+  background-color: var(--color-ui-lsidebar-bg-accent-hover);
+  color: var(--color-rightsidebar-navigation-text);
 }
 
 
 
 
-/* ===================================== */
-/*            PAGE TITLE                 */
-/* ===================================== */
-
-/* Page title */
-.title {
-  font-size: 22px !important; /* Adjust as needed */
-  color: #030303 !important; /* Set desired color */
-  font-weight: bold !important; /* Control weight */
-  text-align: left !important; /* Align as needed */
-  margin-top: 5px !important; /* Adjust spacing */
-  margin-bottom: 5px !important;
-  padding: 0px 0 !important; /* Add padding if necessary */
-}
 
 
 
-/* ===================================== */
-/*            HEADINGS                   */
-/* ===================================== */
-
-/* Headings */
-/* Ensure each heading has its specific size and color in both reading & editing mode */
-h1, .block-content h1, .ls-block h1 {
-  font-size: var(--h1-size) !important;
-  color: var(--color-h1) !important;
-	font-weight: bold !important;
-	margin-top: 9px !important;
-  margin-bottom: 0px !important;
-}
-h2, .block-content h2, .ls-block h2 {
-  font-size: var(--h2-size) !important;
-  color: var(--color-h2) !important;
-	font-weight: bold !important;
-	margin-top: 9px !important;
-  margin-bottom: 0px !important;
-}
-
-h3, .block-content h3, .ls-block h3 {
-  font-size: var(--h3-size) !important;
-  color: var(--color-h3) !important;
-	font-weight: bold !important;
-	margin-top: 9px !important;
-  margin-bottom: 0px !important;
-}
-
-h4, .block-content h4, .ls-block h4 {
-  font-size: var(--h4-size) !important;
-  color: var(--color-h4) !important;
-	font-weight: bold !important;
-	margin-top: 8px !important;
-  margin-bottom: 0px !important;
-}
-
-h5, .block-content h5, .ls-block h5 {
-  font-size: var(--h5-size) !important;
-  color: var(--color-h5) !important;
-	font-weight: bold !important;
-	margin-top: 8px !important;
-  margin-bottom: 0px !important;
-}
-
-
-/* ===================================== */
-/*            SPACING                   */
-/* ===================================== */
-
-/* Reduce line spacing within the same block in view mode */
-.ls-block {
-    margin-bottom: 1px !important;  /* Adjust as needed */
-    padding-bottom: 1px !important;
-}
-
-/* Apply custom line height to block content and paragraphs */
-/* Ensure block content looks the same in view and edit mode */
-.block-content, .editor-inner, .block-properties {
-    color: var(--color-content-text) !important;
-    line-height: var(--ct-line-height, 1.4) !important;
-    padding: 4px !important;
-}
-
-/* Ensure inline text appearance is consistent */
-.editor-inner {
-    box-shadow: none !important;
-    border: none !important;
-}
-
-/* Ensure paragraphs inside editor and view mode look the same */
-.block-content p, .editor-inner p {
-    line-height: var(--ct-line-height, 1.4) !important;
-    margin-bottom: 4px !important;
-}
-
-
-/* ===================================== */
-/*            TAGS                       */
-/* ===================================== */
-
-/* Tags */
-.tag {
-  background-color: var(--color-tag) !important; /* Keeps the original background */
-  color: #e5e5e5 !important; /* Forces white text for visibility */
-  padding: 2px 2px !important;
-  border-radius: 3px !important;
-  font-weight: normal !important;
-	line-height: 1 !important; /* Reduce line spacing */
-	font-size: var(--font-content-size);
-  display: inline-block !important;
-  text-decoration: none !important;
-	transition: color 0.2s ease-in-out; /* Smooth transition for color change */
-}
-
-/* Apply the hover effect */
-.tag:hover {
-  color: var(--color-tag-text-hover) !important;
-}
 
 
 
-/* ===================================== */
-/*     CODES, QUOTES and FLASHCARDS      */
-/* ===================================== */
-
-/* Reduce the size of inline code blocks (e.g., keyboard shortcuts) */
-code {
-  font-size: 11px !important;  /* Smaller font */
-  padding: 1px 1px !important; /* Reduce padding */
-  border-radius: 5px !important; /* Smaller rounded corners */
-  line-height: 1 !important; /* Reduce line height */
-  background-color: #d6d8dc !important; /* Light gray background */
-  color: #383535 !important; /* Dark gray text */
-}
 
 
-/* Ensure code blocks are not affected */
-pre code {
-    font-size: inherit !important;
-    padding: inherit !important;
-}
-
-/* Quotes */
-
-:not(pre) > code {
-  font-size: 14px !important; /* Adjust as desired */
-  padding: none !important;
-  line-height: 0px !important;
-}
-
-.blockquote {
-  background-color: var(--color-quote-bg) !important;
-  color: var(--color-quote-text) !important;
-  padding: 10px !important;
-  border-left: 5px solid var(--color-link) !important;
-}
-
-/* Flashcards */
-.flashcard {
-  background-color: var(--color-flashcard-bg);
-  color: var(--color-flashcard-text);
-  padding: 10px;
-  border-radius: 5px;
-}
-
-/* ===================================== */
-/*            TEXT HIGHLIGHTING          */
-/* ===================================== */
-/* Highlight text selection */
-::selection {
-  background-color: var(--color-mark-bg) !important;
-  color: var(--color-mark-text) !important;
-}
-
-
-/* ===================================== */
-/*            miscellaneous             */
-/* ===================================== */
-
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-  .sidebar-left, .sidebar-right {
-    width: auto;
+  .block-properties {
+    background-color: var(--color-content-props-bg) !important; /* Sets background for block properties */
+    padding: 4px 6px; /* Adds padding inside block properties */
+    border-radius: 4px; /* Rounds corners of block properties */
   }
-}
-
-@media screen and (min-width: 992px) {
-  #right-sidebar.open {
-    width: var(--ls-right-sidebar-width) !important;
+  
+  .content {
+    background-color: var(--color-content-bg); /* Sets background for main content */
+    max-width: var(--content-max-width); /* Sets max-width for content */
   }
-}
-
-/*平板端、移动端*/
-@media screen and (max-width: 992px) {
-  /*调节移动端右侧边栏宽度*/
-  #right-sidebar.open {
-    width: 50vw !important;
+  
+  .alt-bg {
+    background-color: var(--color-content-alt-bg); /* Sets alternative background */
   }
-}
+  
+  .sidebar-accent {
+    background-color: var(--color-ui-lsidebar-bg-accent) !important; /* Sets accent background for sidebar */
+  }
+  
+  .sidebar-text {
+    color: var(--color-ui-lsidebar-text); /* Sets text color for sidebar */
+  }
+  
+  .external-link {
+    color: var(--color-link-ext) !important; /* Sets color for external links */
+    text-decoration: none !important; /* Removes underline from external links */
+  }
+  
+  .external-link:hover {
+    color: #A06F1A !important; /* Darkens external link color on hover */
+  }
+  
+  .page-ref, .block-ref, .wikilink, .internal-link {
+    color: var(--ls-accent-color) !important; /* Sets color for internal links */
+    text-decoration: none !important; /* Removes underline from internal links */
+  }
+  
 
-/* shape of the toggling arrow */
+  
+  a:hover, button:hover {
+    color: var(--ct-accent-color); /* Changes text color on hover for links and buttons */
+  }
+  
+  .CodeMirror pre.CodeMirror-line, .custom-query-title + .custom-query-results pre,
+  pre.CodeMirror-line, .block-content pre {
+    font-family: Arial, sans-serif; /* Sets font for code blocks */
+    font-size: 16px; /* Sets font size for code blocks */
+    line-height: 1.5; /* Sets line height for code blocks */
+    color: var(--color-inline-code-text); /* Sets text color for code blocks */
+  }
+  
+  .ls-block .editor-wrapper:focus-within {
+    background-color: #eaeaea !important; /* Highlights block in edit mode (light mode) */
+  }
+  
+  .dark-theme .ls-block .editor-wrapper:focus-within {
+    background-color: #333333 !important; /* Highlights block in edit mode (dark mode) */
+  }
+  
+  /* Applies styles for bold and italic text */
+  strong, b {
+    color: var(--color-content-text-bold); /* Sets color for bold text */
+  }
+  
+  em, i {
+    color: var(--color-content-text-italic); /* Sets color for italic text */
+  }
+  
+  /* Applies background colors to sidebars */
+  .cp__right-sidebar {
+    background-color: var(--color-ui-rsidebar-bg); /* Sets background for right sidebar */
+  }
+  
+  .cp__left-sidebar {
+    background-color: var(--color-ui-lsidebar-bg); /* Sets background for left sidebar */
+  }
+  
+  /* ===================================== */
+  /*            PAGE TITLE                 */
+  /* ===================================== */
+  /* Styles the page title consistently across themes. */
+  
+  .title {
+    font-size: 22px !important; /* Sets font size for page titles */
+    color: var(--color-title-text) !important; /* Sets title color using variable */
+    font-weight: bold !important; /* Makes title bold */
+    text-align: left !important; /* Aligns title to the left */
+    margin-top: 5px !important; /* Adds top margin */
+    margin-bottom: 5px !important; /* Adds bottom margin */
+    padding: 0px 0 !important; /* Sets padding */
+  }
+  
+  /* ===================================== */
+  /*            HEADINGS                   */
+  /* ===================================== */
+  /* Styles headings for both reading and editing modes. */
+  
+  h1, .block-content h1, .ls-block h1 {
+    font-size: var(--h1-size) !important; /* Sets h1 size */
+    color: var(--color-h1) !important; /* Sets h1 color */
+    font-weight: bold !important; /* Makes h1 bold */
+    margin-top: 9px !important; /* Adds top margin */
+    margin-bottom: 0px !important; /* Removes bottom margin */
+  }
+  
+  h2, .block-content h2, .ls-block h2 {
+    font-size: var(--h2-size) !important; /* Sets h2 size */
+    color: var(--color-h2) !important; /* Sets h2 color */
+    font-weight: bold !important; /* Makes h2 bold */
+    margin-top: 9px !important; /* Adds top margin */
+    margin-bottom: 0px !important; /* Removes bottom margin */
+  }
+  
+  h3, .block-content h3, .ls-block h3 {
+    font-size: var(--h3-size) !important; /* Sets h3 size */
+    color: var(--color-h3) !important; /* Sets h3 color */
+    font-weight: bold !important; /* Makes h3 bold */
+    margin-top: 9px !important; /* Adds top margin */
+    margin-bottom: 0px !important; /* Removes bottom margin */
+  }
+  
+  h4, .block-content h4, .ls-block h4 {
+    font-size: var(--h4-size) !important; /* Sets h4 size */
+    color: var(--color-h4) !important; /* Sets h4 color */
+    font-weight: bold !important; /* Makes h4 bold */
+    margin-top: 8px !important; /* Adds top margin */
+    margin-bottom: 0px !important; /* Removes bottom margin */
+  }
+  
+  h5, .block-content h5, .ls-block h5 {
+    font-size: var(--h5-size) !important; /* Sets h5 size */
+    color: var(--color-h5) !important; /* Sets h5 color */
+    font-weight: bold !important; /* Makes h5 bold */
+    margin-top: 8px !important; /* Adds top margin */
+    margin-bottom: 0px !important; /* Removes bottom margin */
+  }
+  
+  h6, .block-content h6, .ls-block h6 {
+    font-size: 15px !important; /* Sets h6 size */
+    color: var(--color-h6) !important; /* Sets h6 color */
+    font-weight: bold !important; /* Makes h6 bold */
+    margin-top: 7px !important; /* Adds top margin */
+    margin-bottom: 0px !important; /* Removes bottom margin */
+  }
+  
+  /* ===================================== */
+  /*            SPACING                    */
+  /* ===================================== */
+  /* Adjusts spacing for blocks and paragraphs. */
+  
+  .ls-block {
+    margin-bottom: 1px !important; /* Reduces bottom margin between blocks */
+    padding-bottom: 1px !important; /* Reduces bottom padding within blocks */
+  }
+  
+  .block-content, .editor-inner, .block-properties {
+    color: var(--color-content-text) !important; /* Sets text color for content */
+    line-height: var(--ct-line-height, 1.4) !important; /* Applies custom line height */
+    padding: 4px !important; /* Adds padding to content blocks */
+  }
+  
+  .editor-inner {
+    box-shadow: none !important; /* Removes shadow from editor area */
+    border: none !important; /* Removes border from editor area */
+  }
+  
+  .block-content p, .editor-inner p {
+    line-height: var(--ct-line-height, 1.4) !important; /* Applies line height to paragraphs */
+    margin-bottom: 4px !important; /* Adds bottom margin to paragraphs */
+  }
+  
+  #main-content-container {
+    max-width: var(--ls-main-content-max-width); /* Sets max-width for main content area */
+    margin: 0 auto; /* Centers the content */
+  }
+  
+  /* ===================================== */
+  /*            TAGS                       */
+  /* ===================================== */
+  /* Styles tags with hover effects. */
+  
+  .tag {
+    background-color: var(--color-tag) !important; /* Sets tag background */
+    color: var(--color-tag-text) !important; /* Sets tag text color */
+    padding: 2px 2px !important; /* Adds padding to tags */
+    border-radius: 3px !important; /* Rounds tag corners */
+    font-weight: normal !important; /* Sets tag font weight */
+    line-height: 1 !important; /* Reduces line height within tags */
+    font-size: var(--font-content-size); /* Sets tag font size */
+    display: inline-block !important; /* Ensures inline display */
+    text-decoration: none !important; /* Removes underline */
+    transition: color 0.2s ease-in-out; 
+    border: 1px solid var(--ls-accent-color);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);/* Smooth color transition on hover */
+  }
+  
+  .tag:hover {
+    color: var(--color-tag-text-hover) !important; /* Changes text color on hover */
+  }
+  
+  /* ===================================== */
+  /*     CODES, QUOTES, AND FLASHCARDS     */
+  /* ===================================== */
+  /* Styles inline code, blockquotes, and flashcards. */
+  
+  code {
+    font-size: 11px !important; /* Sets smaller font size for inline code */
+    padding: 1px 1px !important; /* Adds minimal padding */
+    border-radius: 5px !important; /* Rounds corners */
+    line-height: 1 !important; /* Reduces line height */
+    background-color: var(--color-inline-code-bg) !important; /* Sets background */
+    color: var(--color-inline-code-text) !important; /* Sets text color */
+  }
+  
+  pre code {
+    font-size: inherit !important; /* Inherits font size for code blocks */
+    padding: inherit !important; /* Inherits padding for code blocks */
+  }
+  
+  :not(pre) > code {
+    font-size: 14px !important; /* Overrides font size for inline code */
+    padding: 0 !important; /* Removes padding */
+    line-height: 1 !important; /* Sets minimal line height */
+  }
+  
+  .blockquote {
+    background-color: var(--color-quote-bg) !important; /* Sets quote background */
+    color: var(--color-quote-text) !important; /* Sets quote text color */
+    padding: 10px !important; /* Adds padding */
+    border-left: 5px solid var(--color-link) !important; /* Adds left border */
+  }
+  
+  .flashcard {
+    background-color: var(--color-flashcard-bg); /* Sets flashcard background */
+    color: var(--color-flashcard-text); /* Sets flashcard text color */
+    padding: 10px; /* Adds padding */
+    border-radius: 5px; /* Rounds corners */
+  }
+  
+  /* ===================================== */
+  /*            TEXT HIGHLIGHTING          */
+  /* ===================================== */
+  /* Styles selected text. */
+  
+  ::selection {
+    background-color: var(--color-mark-bg) !important; /* Sets selection background */
+    color: var(--color-mark-text) !important; /* Sets selection text color */
+  }
+  
+  /* Applies the highlight color to marked text */
+  mark {
+    background-color: var(--ls-highlight-color); /* Sets background color for highlighted text */
+    color: var(--color-mark-text); /* Sets text color for highlighted text */
+  }
+  
+  /* ===================================== */
+  /*            MISCELLANEOUS              */
+  /* ===================================== */
+  /* Various miscellaneous styles. */
+  
+  @media (max-width: 768px) {
+    .tag { font-size: 16px; }
+  }
+  
+  @media screen and (min-width: 992px) {
+    #right-sidebar.open {
+      width: var(--ls-right-sidebar-width) !important; /* Sets right sidebar width on large screens */
+    }
+  }
+  
 
-.rotating-arrow svg {
-    fill: #266f7a;
-    height: 20px;
-}
-
-/* Your existing CSS */
-.block-control .control-hide:has(.rotating-arrow.collapsed) {
-  display: inline;
-}
-
-/* Make bullet a single solid circle (no ring or extra dot) */
-.bullet-container:not(.typed-list).bullet-closed,
-.bullet-container.bullet-closed {
-  background-color: #266f7a !important; /* or your preferred color */
-  border-radius: 70% !important; 
-  width: 12px !important;    /* Adjust size as needed */
-  height: 12px !important;   /* Adjust size as needed */
-  opacity: 5 !important;    /* Ensure no transparency */
-}
-
-/* Remove the extra “dot” or ring drawn via ::before */
-.bullet-container:not(.typed-list).bullet-closed::before,
-.bullet-container.bullet-closed::before {
-  display: none !important;
-  content: none !important;
-  border: none !important;
-}
-
-/* Handle numbered lists specifically */
-ol.block-body .bullet-container.bullet-closed,
-.ls-block[data-refs-self*='"block-content-type","numbered"'] .bullet-container.bullet-closed {
-  background-color: #68C3D0 !important;
-  border-color: #68C3D0 !important;
-}
-
-/* Handle the collapsed state for various list types */
-.blocks-container .ls-block.collapsed .bullet-container {
-  background-color: #68C3D0 !important;
-  border-color: #68C3D0 !important;
-}
-
-
-
-/* Style for Time Tracking (Clocked Tasks) */
-.time-spent {
-  padding-left: 1px;
-  text-wrap: nowrap;
-  font-weight: bold;
-}
-
-
-
-
-/* Only target LOGBOOK */
-.logbook,
-.block-properties .property-key[data-ref="logbook"] {
-  font-size: 11px;  /* Smaller size for LOGBOOK */
-}
-
-
-
-.page-reference {
-    transform: none !important;
-    transition: none !important;
-}
-
-
-/* Hide Logseq reference properties */
-.references .page-properties,
-.references .block-properties {
-    display: none;
-}
-
-
-
-
-/* Increase the distance between different tasks */
-div[data-refs-self*="todo"] + div[data-refs-self*="todo"],
-div[data-refs-self*="done"] + div[data-refs-self*="done"] {
-    margin-top: 0px !important;
-}
-
-
-/* ===================================== */
-/* PAGE and BLOCK EMBEDDING SETTINGS     */
-/* ===================================== */
-
-/* Existing Styles for Embedded Blocks */
-.embed-block {
-  margin-top: -17px;
-  margin-left: -60px;
-}
-div.color-level.embed-block.bg-base-2 {
-  background-color: transparent;
-}
-
-/* Existing Styles for Embedded Pages */
-.embed-page {
-  margin-top: -12px;
-  margin-left: -39px;
-}
-div.color-level.embed-page.bg-base-2 {
-  background-color: transparent;
-}
-div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-control-wrap.flex.flex-row.items-center > a.bullet-link-wrap {
-  display: none;
-}
-.embed-page > .embed-header {
-  margin-left: -20px;
-  font-size: var(--h1-size); /* Match regular h1 size */
-  font-weight: bold; /* Consistent with typical h1 styling */
-}
-
-/* Hide unnecessary header elements */
-.embed-page > .embed-header > div.mr-3 {
-  display: none;
-}
-
-/* Apply heading sizes to embedded page content */
-.embed-page h1 {
-  font-size: var(--h1-size);
-}
-.embed-page h2 {
-  font-size: var(--h2-size);
-}
-.embed-page h3 {
-  font-size: var(--h3-size);
-}
-.embed-page h4 {
-  font-size: var(--h4-size);
-}
-.embed-page h5 {
-  font-size: var(--h5-size);
-}
-
-/* Add an "E" indicator with a hover tooltip */
-.block-content-inner:has(.embed-block)::after,
-.block-content-inner:has(.embed-page)::after {
-  padding-left: 10px; /* Space before the "E" */
-  color: #000000 !important; /* Logseq’s accent color */
-  font-family: var(--ls-font-family-code); /* Code font */
-  font-weight: bold; /* Bold "E" */
-  content: "E"; /* Embed indicator */
-  cursor: pointer; /* Indicate interactivity */
-  position: relative; /* For popup positioning */
-}
-
-/* Style embedded pages in viewer mode to show as a child */
-.block-content-inner .embed-page {
-  margin-left: 20px; /* Indent the embedded page to show it’s a child of the parent block */
-}
-
-/* Style children (blocks) within embedded pages to show as indented children */
-.embed-page .block-content-inner {
-  margin-left: -1px; /* Indent children of the embedded page (adjust to match Logseq’s hierarchy) */
-}
-
-
-/* Make all external links open in new tabs */
-a.external-link {
-  target: _blank;
-}
-
-/* Alternative approach using JavaScript */
-
-
-
-/*Cards*/
-div[data-refs-self*='"card"'] {
-    --tw-shadow: 0;
-    --tw-shadow-colored: 0;
-}
-
-div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .references-blocks {
-	display: none;
-}
-div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .flex > .flex.flex-row.items-center {
-	display: none;
-}
+  
+  .rotating-arrow svg {
+    fill: #266f7a; /* Sets toggle arrow color */
+    height: 20px; /* Sets arrow height */
+  }
+  
+  .block-control .control-hide:has(.rotating-arrow.collapsed) {
+    display: inline; /* Ensures control remains visible when collapsed */
+  }
+  
+  .bullet-container:not(.typed-list).bullet-closed,
+  .bullet-container.bullet-closed {
+    background-color: #266f7a !important; /* Sets closed bullet color */
+    border-radius: 70% !important; /* Makes bullet round */
+    width: 12px !important; /* Sets bullet width */
+    height: 12px !important; /* Sets bullet height */
+    opacity: 1 !important; /* Ensures full opacity */
+  }
+  
+  .bullet-container:not(.typed-list).bullet-closed::before,
+  .bullet-container.bullet-closed::before {
+    display: none !important; /* Hides pseudo-element */
+  }
+  
+  ol.block-body .bullet-container.bullet-closed,
+  .ls-block[data-refs-self*='"block-content-type","numbered"'] .bullet-container.bullet-closed {
+    background-color: #68C3D0 !important; /* Sets bullet color for numbered lists */
+    border-color: #68C3D0 !important; /* Sets border color */
+  }
+  
+  .blocks-container .ls-block.collapsed .bullet-container {
+    background-color: #68C3D0 !important; /* Sets bullet color when collapsed */
+    border-color: #68C3D0 !important; /* Sets border color */
+  }
+  
+  .time-spent {
+    padding-left: 1px; /* Adds left padding to time tracking */
+    text-wrap: nowrap; /* Prevents wrapping */
+    font-weight: bold; /* Makes text bold */
+  }
+  
+  .logbook,
+  .block-properties .property-key[data-ref="logbook"] {
+    font-size: 11px; /* Sets smaller font for logbook */
+  }
+  
+  .page-reference {
+    transform: none !important; /* Disables transformations */
+    transition: none !important; /* Disables transitions */
+  }
+  
+  .references .page-properties,
+  .references .block-properties {
+    display: none; /* Hides properties in references */
+  }
+  
+  div[data-refs-self*="todo"] + div[data-refs-self*="todo"],
+  div[data-refs-self*="done"] + div[data-refs-self*="done"] {
+    margin-top: 0px !important; /* Removes top margin between consecutive tasks */
+  }
+  
+  div.my-2.references-blocks-item:has(.page-ref[data-ref="contents"]),
+  div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
+    display: none; /* Hides specific reference blocks */
+  }
+  
+  /* ===================================== */
+  /*     PAGE AND BLOCK EMBEDDING          */
+  /* ===================================== */
+  /* Styles embedded blocks and pages. */
+  
+  .embed-block {
+    margin-top: -17px; /* Adjusts top margin */
+    margin-left: -60px; /* Adjusts left margin */
+  }
+  
+  div.color-level.embed-block.bg-base-2 {
+    background-color: transparent; /* Makes background transparent */
+  }
+  
+  .embed-page {
+    margin-top: -12px; /* Adjusts top margin */
+    margin-left: -39px; /* Adjusts left margin */
+  }
+  
+  div.color-level.embed-page.bg-base-2 {
+    background-color: transparent; /* Makes background transparent */
+  }
+  
+  div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-control-wrap.flex.flex-row.items-center > a.bullet-link-wrap {
+    display: none; /* Hides bullet link in embedded pages */
+  }
+  
+  .embed-page > .embed-header {
+    margin-left: -20px; /* Adjusts header margin */
+    font-size: var(--h1-size); /* Sets header size */
+    font-weight: bold; /* Makes header bold */
+  }
+  
+  .embed-page > .embed-header > div.mr-3 {
+    display: none; /* Hides specific elements in header */
+  }
+  
+  .embed-page h1 { font-size: var(--h1-size); }
+  .embed-page h2 { font-size: var(--h2-size); }
+  .embed-page h3 { font-size: var(--h3-size); }
+  .embed-page h4 { font-size: var(--h4-size); }
+  .embed-page h5 { font-size: var(--h5-size); }
+  
+  .block-content-inner:has(.embed-block)::after,
+  .block-content-inner:has(.embed-page)::after {
+    padding-left: 10px; /* Adds space before "E" */
+    color: var(--color-content-text) !important; /* Sets "E" color */
+    font-family: var(--ls-font-family); /* Sets font for "E" */
+    font-weight: bold; /* Makes "E" bold */
+    content: "E"; /* Adds "E" indicator */
+    cursor: pointer; /* Makes "E" clickable */
+    position: relative; /* Positions for potential tooltips */
+  }
+  
+  .block-content-inner .embed-page {
+    margin-left: 20px; /* Indents embedded pages */
+  }
+  
+  .embed-page .block-content-inner {
+    margin-left: -1px; /* Adjusts indentation */
+  }
+  
+  div[data-refs-self*='"card"'] {
+    --tw-shadow: 0; /* Removes shadow from card blocks */
+    --tw-shadow-colored: 0; /* Removes colored shadow */
+  }
+  
+  div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .references-blocks {
+    display: none; /* Hides references in card blocks */
+  }
+  
+  div[data-refs-self*='"card"'] > .block-main-container > .block-content-wrapper > .flex > .flex.flex-row.items-center {
+    display: none; /* Hides flex elements in card blocks */
+  }
