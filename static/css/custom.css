@@ -481,8 +481,9 @@ em, i {
 
 /* Existing Styles for Embedded Blocks */
 .embed-block {
-  margin-top: -10px;
-  margin-left: -58px;
+  margin-top: -10px; /* 10 is ideal */
+  margin-left: -61px; /* 61 is ideal */
+  margin-right: -13px; /* 13 is ideal */
 }
 div.color-level.embed-block.bg-base-2 {
   background-color: transparent;
@@ -491,7 +492,7 @@ div.color-level.embed-block.bg-base-2 {
 /* Existing Styles for Embedded Pages */
 .embed-page {
   margin-top: -12px;
-  margin-left: -39px;
+  margin-left: -5px;
 }
 div.color-level.embed-page.bg-base-2 {
   background-color: transparent;
