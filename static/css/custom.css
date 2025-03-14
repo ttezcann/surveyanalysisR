@@ -474,9 +474,6 @@ em, i {
   }
   
 
-  /* ===================================== */
-/*            EMBEDDING SETTINGS         */
-/* ===================================== */
 
 /* ===================================== */
 /*            EMBEDDING SETTINGS         */
@@ -484,8 +481,8 @@ em, i {
 
 /* Existing Styles for Embedded Blocks */
 .embed-block {
-  margin-top: -12px;
-  margin-left: -39px;
+  margin-top: -10px;
+  margin-left: -58px;
 }
 div.color-level.embed-block.bg-base-2 {
   background-color: transparent;
