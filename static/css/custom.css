@@ -158,7 +158,16 @@
   
 
 /* General UI element styles */
-.cp__left-sidebar, .cp__header, .sidebar-header, .nav-link, .nav-link.help, .nav-link:hover {
+
+.cp__left-sidebar {
+  background-color: var(--color-ui-lsidebar-bg)
+}
+
+.cp__right-sidebar {
+  background-color: var(--color-ui-rsidebar-bg)
+}
+
+.cp__header, .sidebar-header, .nav-link, .nav-link.help, .nav-link:hover {
   font-size: var(--font-ui-size);
   background-color: var(--color-ui-lsidebar-bg-accent-hover);
   color: var(--color-rightsidebar-navigation-text);
@@ -170,11 +179,7 @@
   color: var(--color-rightsidebar-navigation-text);
 }
 
-.cp__right-sidebar, .cp__header, .nav-link, .nav-link.help, .nav-link:hover {
-  font-size: var(--font-ui-size);
-  background-color: var(--color-ui-lsidebar-bg-accent-hover);
-  color: var(--color-rightsidebar-navigation-text);
-}
+
 
 
 .block-properties {
@@ -199,6 +204,10 @@
     color: var(--color-ui-lsidebar-text); /* Sets text color for sidebar */
   }
   
+.sidebar-item.content {
+    font-size: 20px;
+}
+
 .external-link {
     color: var(--color-link-ext) !important; /* Sets color for external links */
     text-decoration: none !important; /* Removes underline from external links */
@@ -541,4 +550,14 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
   display: inline;
   }
 
- 
+
+   /* ===================================== */
+  /*            GRAPH              */
+  /* ===================================== */
+
+ .graph {
+    transform: scale(1.5); /* Slightly enlarges the div */
+}
+
+
+
