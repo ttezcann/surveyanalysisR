@@ -556,7 +556,7 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
   /* ===================================== */
 
  .graph {
-    transform: scale(1); /* Slightly enlarges the div */
+    transform: scale(1.4); /* Slightly enlarges the div */
 }
 
 .pagetree .tree-button {
@@ -573,15 +573,16 @@ width: 16px;
 }
 
 
-/* Hide block-properties of collapsed blocks */
-.ls-block:not([data-collapsed="false"]) .block-properties {
-  display: none;
+/* Hide the page properties content */
+.page-properties {
+  display: none !important;
 }
 
-.ls-block[data-collapsed]:not([data-collapsed="false"]) .block-properties {
-  display: none;
+/* Hide the bullet of the block containing page properties */
+.ls-block .page-properties {
+  display: none !important;
 }
-
-.block-properties {
-  display: none;
+.ls-block .page-properties::before {
+  display: none !important;
 }
+.content .ls-block .pre-block {display: none}
