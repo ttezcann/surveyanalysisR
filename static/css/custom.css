@@ -556,7 +556,7 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
   /* ===================================== */
 
  .graph {
-    transform: scale(1.4); /* Slightly enlarges the div */
+    transform: scale(1); /* Slightly enlarges the div */
 }
 
 .pagetree .tree-button {
@@ -572,3 +572,16 @@ margin-left: 16px;
 width: 16px;
 }
 
+
+/* Hide block-properties of collapsed blocks */
+.ls-block:not([data-collapsed="false"]) .block-properties {
+  display: none;
+}
+
+.ls-block[data-collapsed]:not([data-collapsed="false"]) .block-properties {
+  display: none;
+}
+
+.block-properties {
+  display: none;
+}
