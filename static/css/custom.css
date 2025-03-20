@@ -556,8 +556,19 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
   /* ===================================== */
 
  .graph {
-    transform: scale(1.5); /* Slightly enlarges the div */
+    transform: scale(1.4); /* Slightly enlarges the div */
 }
 
-
+.pagetree .tree-button {
+  visibility: hidden;
+}
+.pagetree:hover .tree-button {
+  visibility: visible;
+}
+.pagetree-node {
+margin-left: 16px;
+}
+.tree-button {
+width: 16px;
+}
 
