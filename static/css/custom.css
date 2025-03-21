@@ -462,71 +462,8 @@ em, i {
 
 
   
-  .page-reference {
-    transform: none !important; /* Disables transformations */
-    transition: none !important; /* Disables transitions */
-  }
+
   
-  .references .page-properties,
-  .references .block-properties {
-    display: none; /* Hides properties in references */
-  }
-  
-  div[data-refs-self*="todo"] + div[data-refs-self*="todo"],
-  div[data-refs-self*="done"] + div[data-refs-self*="done"] {
-    margin-top: 0px !important; /* Removes top margin between consecutive tasks */
-  }
-  
-  div.my-2.references-blocks-item:has(.page-ref[data-ref="contents"]),
-  div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
-    display: none; /* Hides specific reference blocks */
-  }
-  
-
-
-/* ===================================== */
-/*            EMBEDDING SETTINGS         */
-/* ===================================== */
-
-/* Existing Styles for Embedded Blocks */
-.embed-block {
-  margin-top: -10px; /* 10 is ideal */
-  margin-left: -61px; /* 61 is ideal */
-  margin-right: -13px; /* 13 is ideal */
-}
-div.color-level.embed-block.bg-base-2 {
-  background-color: transparent;
-}
-
-/* Existing Styles for Embedded Pages */
-.embed-page {
-  margin-top: -12px;
-  margin-left: -5px;
-}
-div.color-level.embed-page.bg-base-2 {
-  background-color: transparent;
-}
-div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-control-wrap.flex.flex-row.items-center > a.bullet-link-wrap {
-  display: none;
-}
-.embed-page > .embed-header {
-  margin-left: 8px;
-}
-.embed-page > .embed-header > div.mr-3 {
-  display: none;
-}
-
-/* Add an "E" indicator with a hover tooltip */
-.block-content-inner:has(.embed-block)::after,
-.block-content-inner:has(.embed-page)::after {
-  padding-left: 10px; /* Space before the "E" */
-  color: hsl(var(--ct-accent-color)); /* Logseq’s accent color */
-  font-family: var(--ls-font-family-code); /* Code font */
-  font-weight: bold; /* Bold "E" */
-  content: "E"; /* Embed indicator */
-  cursor: pointer; /* Indicate interactivity */
-  position: relative; /* For popup positioning */
-}
 
 
    /* ===================================== */
@@ -556,22 +493,33 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
   /* ===================================== */
 
  .graph {
-    transform: scale(1.4); /* Slightly enlarges the div */
+    transform: scale(1); /* Slightly enlarges the div */
 }
 
-.pagetree .tree-button {
-  visibility: hidden;
-}
-.pagetree:hover .tree-button {
-  visibility: visible;
-}
-.pagetree-node {
-margin-left: 16px;
-}
-.tree-button {
-width: 16px;
+.node:has(text:not(:empty):where(:text("Flashcards"))) circle {
+  fill: #FF0000 !important; /* Red */
 }
 
+.embed-page .embed-header {
+  display: none;
+}
+
+/* Add an "E" indicator with a hover tooltip */
+.block-content-inner:has(.embed-block)::after,
+.block-content-inner:has(.embed-page)::after {
+  padding-left: 10px; /* Space before the "E" */
+  color: hsl(var(--ct-accent-color)); /* Logseq’s accent color */
+  font-family: var(--ls-font-family-code); /* Code font */
+  font-weight: bold; /* Bold "E" */
+  content: "E"; /* Embed indicator */
+  cursor: pointer; /* Indicate interactivity */
+  position: relative; /* For popup positioning */
+}
+
+
+   /* ===================================== */
+  /*            page propertieis              */
+  /* ===================================== */
 
 /* Hide the page properties content */
 .page-properties {
@@ -582,7 +530,34 @@ width: 16px;
 .ls-block .page-properties {
   display: none !important;
 }
+
 .ls-block .page-properties::before {
   display: none !important;
 }
 .content .ls-block .pre-block {display: none}
+
+
+
+.page-reference {
+  transform: none !important; /* Disables transformations */
+  transition: none !important; /* Disables transitions */
+}
+
+.references .page-properties,
+.references .block-properties {
+  display: none; /* Hides properties in references */
+}
+
+#main-content-container div.page-linked div.references-blocks-item:has(a[data-ref="parent"]) {
+  display: none;
+}
+
+div[data-refs-self*="todo"] + div[data-refs-self*="todo"],
+div[data-refs-self*="done"] + div[data-refs-self*="done"] {
+  margin-top: 0px !important; /* Removes top margin between consecutive tasks */
+}
+
+div.my-2.references-blocks-item:has(.page-ref[data-ref="contents"]),
+div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
+  display: none; /* Hides specific reference blocks */
+}
