@@ -474,13 +474,13 @@ em, i {
 /* shape of the toggling arrow */
 
 .rotating-arrow svg {
-  fill: #064953;
-  height: 24px;
+  fill: #000000;
+  height: 22px;
 }
 
 .dark-theme .rotating-arrow svg {
-  fill: #9adee8;
-  height: 24px;
+  fill: #ffffff;
+  height: 22px;
 }
 
 .block-control .control-hide:has(.rotating-arrow.collapsed) {
@@ -500,21 +500,7 @@ em, i {
   fill: #FF0000 !important; /* Red */
 }
 
-.embed-page .embed-header {
-  display: none;
-}
 
-/* Add an "E" indicator with a hover tooltip */
-.block-content-inner:has(.embed-block)::after,
-.block-content-inner:has(.embed-page)::after {
-  padding-left: 10px; /* Space before the "E" */
-  color: hsl(var(--ct-accent-color)); /* Logseq’s accent color */
-  font-family: var(--ls-font-family-code); /* Code font */
-  font-weight: bold; /* Bold "E" */
-  content: "E"; /* Embed indicator */
-  cursor: pointer; /* Indicate interactivity */
-  position: relative; /* For popup positioning */
-}
 
 
    /* ===================================== */
@@ -560,4 +546,74 @@ div[data-refs-self*="done"] + div[data-refs-self*="done"] {
 div.my-2.references-blocks-item:has(.page-ref[data-ref="contents"]),
 div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
   display: none; /* Hides specific reference blocks */
+}
+
+
+
+/* ===================================== */
+/*            EMBEDDING SETTINGS         */
+/* ===================================== */
+
+/* Existing Styles for Embedded Blocks */
+.embed-block {
+  margin-top: -10px; /* 10 is ideal */
+  margin-left: -50px; /* 61 is ideal */
+  margin-right: -10px; /* 13 is ideal */
+}
+div.color-level.embed-block.bg-base-2 {
+  background-color: transparent;
+}
+
+/* Existing Styles for Embedded Pages */
+.embed-page {
+  margin-top: -16px;
+  margin-left: -39px;
+  margin-bottom: -16px;
+
+}
+div.color-level.embed-page.bg-base-2 {
+  background-color: transparent;
+}
+div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-control-wrap.flex.flex-row.items-center > a.bullet-link-wrap {
+  display: none;
+}
+
+.embed-block .bullet-link-wrap {
+  display: none;
+}
+
+.embed-page > .embed-header {
+  margin-left: 8px;
+}
+.embed-page > .embed-header > div.mr-3 {
+  display: none;
+}
+
+/* Add this to hide the embedded page title */
+.embed-page .page-title {
+  display: none;
+}
+
+.embed-block .embed-header {
+  display: none;
+}
+
+.embed-page .embed-header {
+  display: none;
+}
+
+
+
+
+/* Ensure the block container and control don’t shift */
+.block-control {
+  display: inline-block !important;
+  vertical-align: top !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+}
+
+.ls-block h1, .ls-block h2, .ls-block h3, .ls-block h4, .ls-block h5, .ls-block h6 {
+  border-bottom: 1px solid #ccc;
 }
