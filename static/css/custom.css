@@ -1,164 +1,157 @@
-/* ========================================================================
-   1. ROOT VARIABLES
-   
-   ======================================================================== */
+/* #region ROOT VARIABLES */
+:root {
+  /* Font Settings */
+  --ls-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-content: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-content-size: 18px; /* Size of content text */
+  --ct-line-height: 1.2; /* Line height multiplier for content */
+  --font-ui: "OS System default", sans-serif; /* Font for UI elements */
+  --font-ui-size: 17px; /* Size of UI text */
 
-   :root {
-    /* Font Settings */
-    --ls-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-content: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-content-size: 18px; /* Size of content text */
-    --ct-line-height: 1.2; /* Line height multiplier for content */
-    --font-ui: "OS System default", sans-serif; /* Font for UI elements */
-    --font-ui-size: 17px; /* Size of UI text */
-  
-    /* General Colors */
-    --color-title-text: #000000; /* Page title text color */
-    --color-content-text: #1A1A1A; /* Main content text color */
-    --color-content-text-bold: #0C0D14; /* Bold text color */
-    --color-content-text-italic: #282A36; /* Italic text color */
-    --color-link: #3996A3; /* Internal link color */
-    --color-link-ext: #B88726; /* External link color */
-    --color-tag-text: #FDFDFD; /* Tag text color */
-    --color-tag: #406E84; /* Tag background color */
-    --color-tag-text-hover: #B88726; /* Tag text hover color */
-    --ls-accent-color: #3996A3; /* Main accent color (Cyan) */
-    --ct-accent-color: #406E84; /* Secondary accent color (Cyan) */
-  
-    /* UI Colors */
-    --color-ui-rsidebar-bg: #FEFEFE; /* Right sidebar background */
-    --color-ui-lsidebar-bg: #E7E7E7; /* Left sidebar background */
-    --color-ui-lsidebar-bg-accent: #479FAD; /* Left sidebar accent color */
-    --color-ui-lsidebar-bg-accent-hover: #d1d1d1    ; /* Left sidebar hover accent */
-    --color-leftsidebar-navigation-text: #ffffff; /* rightsidebar-navigation-text */
-    --color-rightsidebar-navigation-text: #000000; /* rightsidebar-navigation-text */
-    --color-ui-lsidebar-text: #010101; /* Left sidebar text color */
-    --color-ui-body-bg: #FFFFFF; /* Main body background color */
+  /* General Colors */
+  --color-title-text: #000000; /* Page title text color */
+  --color-content-text: #1A1A1A; /* Main content text color */
+  --color-content-text-bold: #0C0D14; /* Bold text color */
+  --color-content-text-italic: #282A36; /* Italic text color */
+  --color-link: #3996A3; /* Internal link color */
+  --color-link-ext: #B88726; /* External link color */
+  --color-tag-text: #FDFDFD; /* Tag text color */
+  --color-tag: #406E84; /* Tag background color */
+  --color-tag-text-hover: #B88726; /* Tag text hover color */
+  --ls-accent-color: #3996A3; /* Main accent color (Cyan) */
+  --ct-accent-color: #406E84; /* Secondary accent color (Cyan) */
 
-    /* icon colors */
-    --icon-color-light: #ffffff; /* Light mode color */
-  
-    /* Content Backgrounds */
-    --color-content-bg: #FFFFFF; /* Background for main content */
-    --color-content-props-bg: #dadad9; /* Block properties background */
-    --color-content-alt-bg: #dadad9; /* Alternative content background */
-    --color-bullet-closed: #266f7a;
-    --color-bullet-numbered: #68C3D0;
-  
-    /* Headings */
-    --color-h1: #030303; /* H1 heading color */
-    --color-h2: #030303; /* H2 heading color */
-    --color-h3: #030303; /* H3 heading color */
-    --color-h4: #030303; /* H4 heading color */
-    --color-h5: #030303; /* H5 heading color */
-    --color-h6: #030303; /* H6 heading color */
-    --h1-size: 18px; /* H1 font size */
-    --h2-size: 18px; /* H2 font size */
-    --h3-size: 18px; /* H3 font size */
-    --h4-size: 16px; /* H4 font size */
-    --h5-size: 17px; /* H5 font size */
-  
-    /* Highlighting */
-    --color-mark-bg: #3996A3; /* Highlight background color */
-    --color-mark-text: #F4F4F4; /* Highlighted text color */
-    --ls-highlight-color: var(--color-mark-bg) !important; /* Logseq highlight color */
-  
-    /* Quotes */
-    --color-quote-bg: #EAEAE5 !important; /* Quote background color */
-    --color-quote-text: #000000 !important; /* Quote text color */
-  
-    /* Flashcards */
-    --color-flashcard-bg: #FEFEFE; /* Flashcard background color */
-    --color-flashcard-text: #282A36; /* Flashcard text color */
-  
-    /* Inline Code */
-    --color-inline-code-bg: #D6D8DF; /* Inline code background color */
-    --color-inline-code-text: #282A36; /* Inline code text color */
-  
-    /* Content Sizes */
-      --ls-main-content-max-width: 1000px; /* Fixed max width for main content */
-      --ls-right-sidebar-width: 40%; /* Proportional sidebar width */
-      --content-max-width: 100%; /* Flexible width for .content */
-  }
-  
-  /* ===================================== */
-  /*          DARK MODE VARIABLES          */
-  /* ===================================== */  
-  .dark-theme {
-    /* General Colors */
-    --color-title-text: #FFFFFF; /* Title text color */
-    --color-content-text: #F0F0F0; /* Main content text color */
-    --color-content-text-bold: #FFFFFF; /* Bold text color */
-    --color-content-text-italic: #D0D0D0; /* Italic text color */
-    --color-link: #68D4E3; /* Internal link color */
-    --color-link-ext: #E0B54C; /* External link color */
-    --color-tag-text: #FDFDFD; /* Tag text color */
-    --color-tag: #5A89A3; /* Tag background color */
-    --color-tag-text-hover: #E0B54C; /* Tag hover text color */
-    --ls-accent-color: #57C8D6; /* Accent color */
-    --ct-accent-color: #57C8D6; /* Secondary accent color */
-  
-    /* UI Colors */
-    --color-ui-rsidebar-bg: #1E1E1E; /* Right sidebar background */
-    --color-ui-lsidebar-bg: #282828; /* Left sidebar background */
-    --color-ui-lsidebar-bg-accent: #57C8D6; /* Left sidebar accent */
-    --color-ui-lsidebar-bg-accent-hover: #264653; /* Left sidebar hover accent */
-    --color-ui-lsidebar-text: #E0E0E0; /* Left sidebar text color */
-    --color-ui-body-bg: #1A1A1A; /* Main body background */
-    --color-rightsidebar-navigation-text: #ffffff; /* Adjust for dark mode contrast */
-    --color-leftsidebar-navigation-text: #ffffff; /* rightsidebar-navigation-text */
+  /* UI Colors */
+  --color-ui-rsidebar-bg: #FEFEFE; /* Right sidebar background */
+  --color-ui-lsidebar-bg: #E7E7E7; /* Left sidebar background */
+  --color-ui-lsidebar-bg-accent: #479FAD; /* Left sidebar accent color */
+  --color-ui-lsidebar-bg-accent-hover: #d1d1d1; /* Left sidebar hover accent */
+  --color-leftsidebar-navigation-text: #ffffff; /* rightsidebar-navigation-text */
+  --color-rightsidebar-navigation-text: #000000; /* rightsidebar-navigation-text */
+  --color-ui-lsidebar-text: #010101; /* Left sidebar text color */
+  --color-ui-body-bg: #FFFFFF; /* Main body background color */
 
-    /* icon colors */
-    --icon-color-dark: #ffffff;  /* Dark mode color */
-  
-    /* Content Backgrounds */
-    --color-content-bg: #121212; /* Main content background */
-    --color-content-props-bg: #2A2A2A; /* Block properties background */
-    --color-content-alt-bg: #2A2A2A; /* Alternative content background */
-    --color-bullet-closed: #57C8D6; /* Adjusted for dark mode */
-    --color-bullet-numbered: #57C8D6;
-  
-    /* Headings */
-    --color-h1: #FFFFFF; /* H1 color */
-    --color-h2: #FFFFFF; /* H2 color */
-    --color-h3: #FFFFFF; /* H3 color */
-    --color-h4: #FFFFFF; /* H4 color */
-    --color-h5: #FFFFFF; /* H5 color */
-    --color-h6: #FFFFFF; /* H6 color */
-  
-    /* Highlighting */
-    --color-mark-bg: #054e4f; /* Highlight background */
-    --color-mark-text: #FFFFFF; /* Highlight text (changed for visibility) */
-  
-    /* Quotes */
-    --color-quote-bg: #2A2A2A !important; /* Quote background */
-    --color-quote-text: #E0E0E0 !important; /* Quote text */
-  
-    /* Flashcards */
-    --color-flashcard-bg: #282828; /* Flashcard background */
-    --color-flashcard-text: #E0E0E0; /* Flashcard text */
-  
-    /* Inline Code */
-    --color-inline-code-bg: #2A2A2A; /* Inline code background */
-    --color-inline-code-text: #E0E0E0; /* Inline code text */
-  }
-  
-  /* ===================================== */
-  /*            BASE STYLES                */
-  /* ===================================== */
-  /* Applies font and color settings to the body and various elements. */
-  
-  body {
-    font-family: var(--font-content); /* Sets the font for the entire body */
-    font-size: var(--font-content-size); /* Sets the font size for content */
-    background-color: var(--color-ui-body-bg); /* Sets the body background color */
-    color: var(--color-content-text); /* Sets the default text color */
-    line-height: var(--ct-line-height) !important; /* Applies custom line height */
-  }
-  
+  /* icon colors */
+  --icon-color-light: #ffffff; /* Light mode color */
 
-/* General UI element styles */
+  /* Content Backgrounds */
+  --color-content-bg: #FFFFFF; /* Background for main content */
+  --color-content-props-bg: #f1f1ec; /* Block properties background */
+  --color-content-alt-bg: #dadad9; /* Alternative content background */
+  --color-bullet-closed: #266f7a;
+  --color-bullet-numbered: #68C3D0;
 
+  /* Headings */
+  --color-h1: #030303; /* H1 heading color */
+  --color-h2: #030303; /* H2 heading color */
+  --color-h3: #030303; /* H3 heading color */
+  --color-h4: #030303; /* H4 heading color */
+  --color-h5: #030303; /* H5 heading color */
+  --color-h6: #030303; /* H6 heading color */
+  --h1-size: 18px; /* H1 font size */
+  --h2-size: 18px; /* H2 font size */
+  --h3-size: 18px; /* H3 font size */
+  --h4-size: 16px; /* H4 font size */
+  --h5-size: 17px; /* H5 font size */
+
+  /* Highlighting */
+  --color-mark-bg: #3996A3; /* Highlight background color */
+  --color-mark-text: #F4F4F4; /* Highlighted text color */
+  --ls-highlight-color: var(--color-mark-bg) !important; /* Logseq highlight color */
+
+  /* Quotes */
+  --color-quote-bg: #EAEAE5 !important; /* Quote background color */
+  --color-quote-text: #000000 !important; /* Quote text color */
+
+  /* Flashcards */
+  --color-flashcard-bg: #FEFEFE; /* Flashcard background color */
+  --color-flashcard-text: #282A36; /* Flashcard text color */
+
+  /* Inline Code */
+  --color-inline-code-bg: #e5e7f1; /* Inline code background color */
+  --color-inline-code-text: #000000; /* Inline code text color */
+  --color-inline-singlecode-text: #000000; /* Inline code text color */
+
+  /* Content Sizes */
+    --ls-main-content-max-width: 1000px; /* Fixed max width for main content */
+    --ls-right-sidebar-width: 40%; /* Proportional sidebar width */
+    --content-max-width: 100%; /* Flexible width for .content */
+}
+/* #endregion */
+
+/* #region DARK MODE ROOT VARIABLES */
+.dark-theme {
+  /* General Colors */
+  --color-title-text: #FFFFFF; /* Title text color */
+  --color-content-text: #F0F0F0; /* Main content text color */
+  --color-content-text-bold: #FFFFFF; /* Bold text color */
+  --color-content-text-italic: #D0D0D0; /* Italic text color */
+  --color-link: #68D4E3; /* Internal link color */
+  --color-link-ext: #E0B54C; /* External link color */
+  --color-tag-text: #FDFDFD; /* Tag text color */
+  --color-tag: #5A89A3; /* Tag background color */
+  --color-tag-text-hover: #E0B54C; /* Tag hover text color */
+  --ls-accent-color: #57C8D6; /* Accent color */
+  --ct-accent-color: #57C8D6; /* Secondary accent color */
+
+  /* UI Colors */
+  --color-ui-rsidebar-bg: #1E1E1E; /* Right sidebar background */
+  --color-ui-lsidebar-bg: #282828; /* Left sidebar background */
+  --color-ui-lsidebar-bg-accent: #57C8D6; /* Left sidebar accent */
+  --color-ui-lsidebar-bg-accent-hover: #264653; /* Left sidebar hover accent */
+  --color-ui-lsidebar-text: #E0E0E0; /* Left sidebar text color */
+  --color-ui-body-bg: #1A1A1A; /* Main body background */
+  --color-rightsidebar-navigation-text: #ffffff; /* Adjust for dark mode contrast */
+  --color-leftsidebar-navigation-text: #ffffff; /* rightsidebar-navigation-text */
+
+  /* icon colors */
+  --icon-color-dark: #ffffff;  /* Dark mode color */
+
+  /* Content Backgrounds */
+  --color-content-bg: #121212; /* Main content background */
+  --color-content-props-bg: #2A2A2A; /* Block properties background */
+  --color-content-alt-bg: #2A2A2A; /* Alternative content background */
+  --color-bullet-closed: #57C8D6; /* Adjusted for dark mode */
+  --color-bullet-numbered: #57C8D6;
+
+  /* Headings */
+  --color-h1: #FFFFFF; /* H1 color */
+  --color-h2: #FFFFFF; /* H2 color */
+  --color-h3: #FFFFFF; /* H3 color */
+  --color-h4: #FFFFFF; /* H4 color */
+  --color-h5: #FFFFFF; /* H5 color */
+  --color-h6: #FFFFFF; /* H6 color */
+
+  /* Highlighting */
+  --color-mark-bg: #054e4f; /* Highlight background */
+  --color-mark-text: #E0E0E0; /* Highlight text (changed for visibility) */
+
+  /* Quotes */
+  --color-quote-bg: #2A2A2A !important; /* Quote background */
+  --color-quote-text: #E0E0E0 !important; /* Quote text */
+
+  /* Flashcards */
+  --color-flashcard-bg: #282828; /* Flashcard background */
+  --color-flashcard-text: #E0E0E0; /* Flashcard text */
+
+  /* Inline Code */
+  --color-inline-code-bg: #434242; /* Inline code background */
+  --color-inline-code-text: #E0E0E0; /* Inline code text */
+  --color-inline-singlecode-text: #E0E0E0; /* Inline code text color */
+}
+/* #endregion */
+
+/* #region BASE FONT STYLES */
+body {
+  font-family: var(--font-content); /* Sets the font for the entire body */
+  font-size: var(--font-content-size); /* Sets the font size for content */
+  background-color: var(--color-ui-body-bg); /* Sets the body background color */
+  color: var(--color-content-text); /* Sets the default text color */
+  line-height: var(--ct-line-height) !important; /* Applies custom line height */
+}
+/* #endregion */
+
+/* #region GENERAL UI ELEMENT STYLES and COLORS */
 .cp__left-sidebar {
   background-color: var(--color-ui-lsidebar-bg)
 }
@@ -179,381 +172,197 @@
   color: var(--color-rightsidebar-navigation-text);
 }
 
+.sidebar-item.content {
+  font-size: 17px;
+}
 
 
 
-.block-properties {
-    background-color: var(--color-content-props-bg) !important; /* Sets background for block properties */
-    padding: 4px 6px; /* Adds padding inside block properties */
-    border-radius: 4px; /* Rounds corners of block properties */
-  }
-  
+
+/* Sidebar Accent */
+.sidebar-accent {
+  background-color: var(--color-ui-lsidebar-bg-accent) !important; /* Sets accent background for sidebar */
+}
+
+/* Sidebar Text */
+.sidebar-text {
+  color: var(--color-ui-lsidebar-text); /* Sets text color for sidebar */
+}
+
+/* Content Background */
 .content {
-    background-color: var(--color-content-bg); /* Sets background for main content */
-  }
-  
+  background-color: var(--color-content-bg); /* Sets background for main content */
+}
+
+/* Content Alternative Background */
 .alt-bg {
     background-color: var(--color-content-alt-bg); /* Sets alternative background */
-  }
-  
-.sidebar-accent {
-    background-color: var(--color-ui-lsidebar-bg-accent) !important; /* Sets accent background for sidebar */
-  }
-  
-.sidebar-text {
-    color: var(--color-ui-lsidebar-text); /* Sets text color for sidebar */
-  }
-  
-.sidebar-item.content {
-    font-size: 20px;
 }
 
-.external-link {
-    color: var(--color-link-ext) !important; /* Sets color for external links */
-    text-decoration: none !important; /* Removes underline from external links */
-  }
-  
-.external-link:hover {
-    color: #A06F1A !important; /* Darkens external link color on hover */
-  }
-  
-.page-ref, .block-ref, .wikilink, .internal-link {
-    color: var(--ls-accent-color) !important; /* Sets color for internal links */
-    text-decoration: none !important; /* Removes underline from internal links */
-  }
-  
 
-  
-a:hover, button:hover {
-    color: var(--ct-accent-color); /* Changes text color on hover for links and buttons */
-  }
-  
-.CodeMirror pre.CodeMirror-line, .custom-query-title + .custom-query-results pre,
-  pre.CodeMirror-line, .block-content pre {
-    font-family: Arial, sans-serif; /* Sets font for code blocks */
-    font-size: 16px; /* Sets font size for code blocks */
-    line-height: 1.5; /* Sets line height for code blocks */
-    color: var(--color-inline-code-text); /* Sets text color for code blocks */
-    background-color: var(--color-inline-code-bg);
-    border-radius: 4px;
-  }
-  
-.ls-block .editor-wrapper:focus-within {
-    background-color: #eaeaea !important; /* Highlights block in edit mode (light mode) */
-  }
-  
-.dark-theme .ls-block .editor-wrapper:focus-within {
-    background-color: #5a5858 !important; /* Highlights block in edit mode (dark mode) */
-  }
-  
-  /* Applies styles for bold and italic text */
-strong, b {
-    color: var(--color-content-text-bold); /* Sets color for bold text */
-  }
-  
-em, i {
-    color: var(--color-content-text-italic); /* Sets color for italic text */
-  }
- 
-  
-  /* ===================================== */
-  /*            PAGE TITLE                 */
-  /* ===================================== */
-  /* Styles the page title consistently across themes. */
-  
+/* #endregion */
+
+/* #region PAGE TITLE */
 .title {
-    font-size: 22px !important; /* Sets font size for page titles */
-    color: var(--color-title-text) !important; /* Sets title color using variable */
-    font-weight: bold !important; /* Makes title bold */
-    text-align: left !important; /* Aligns title to the left */
-    margin-top: 5px !important; /* Adds top margin */
-    margin-bottom: 5px !important; /* Adds bottom margin */
-    padding: 0px 0 !important; /* Sets padding */
+  font-size: 22px !important; /* Sets font size for page titles */
+  color: var(--color-title-text) !important; /* Sets title color using variable */
+  font-weight: bold !important; /* Makes title bold */
+  text-align: left !important; /* Aligns title to the left */
+  margin-top: 5px !important; /* Adds top margin */
+  margin-bottom: 5px !important; /* Adds bottom margin */
+  padding: 0px 0 !important; /* Sets padding */
+}
+/* #endregion */
+
+/* #region HEADINGS */
+h1, .block-content h1, .ls-block h1 { /* Styles headings for both reading and editing modes. */
+  font-size: var(--h1-size) !important; /* Sets h1 size */
+  color: var(--color-h1) !important; /* Sets h1 color */
+  font-weight: bold !important; /* Makes h1 bold */
+  margin-top: 9px !important; /* Adds top margin */
+  margin-bottom: 0px !important; /* Removes bottom margin */
+}
+
+h2, .block-content h2, .ls-block h2 {
+  font-size: var(--h2-size) !important; /* Sets h2 size */
+  color: var(--color-h2) !important; /* Sets h2 color */
+  font-weight: bold !important; /* Makes h2 bold */
+  margin-top: 9px !important; /* Adds top margin */
+  margin-bottom: 0px !important; /* Removes bottom margin */
+}
+
+h3, .block-content h3, .ls-block h3 {
+  font-size: var(--h3-size) !important; /* Sets h3 size */
+  color: var(--color-h3) !important; /* Sets h3 color */
+  font-weight: bold !important; /* Makes h3 bold */
+  margin-top: 9px !important; /* Adds top margin */
+  margin-bottom: 0px !important; /* Removes bottom margin */
+}
+
+h4, .block-content h4, .ls-block h4 {
+  font-size: var(--h4-size) !important; /* Sets h4 size */
+  color: var(--color-h4) !important; /* Sets h4 color */
+  font-weight: bold !important; /* Makes h4 bold */
+  margin-top: 8px !important; /* Adds top margin */
+  margin-bottom: 0px !important; /* Removes bottom margin */
+}
+
+h5, .block-content h5, .ls-block h5 {
+  font-size: var(--h5-size) !important; /* Sets h5 size */
+  color: var(--color-h5) !important; /* Sets h5 color */
+  font-weight: bold !important; /* Makes h5 bold */
+  margin-top: 8px !important; /* Adds top margin */
+  margin-bottom: 0px !important; /* Removes bottom margin */
+}
+
+h6, .block-content h6, .ls-block h6 {
+  font-size: 15px !important; /* Sets h6 size */
+  color: var(--color-h6) !important; /* Sets h6 color */
+  font-weight: bold !important; /* Makes h6 bold */
+  margin-top: 7px !important; /* Adds top margin */
+  margin-bottom: 0px !important; /* Removes bottom margin */
+}
+
+.ls-block h1, .ls-block h2, .ls-block h3, .ls-block h4, .ls-block h5, .ls-block h6 {
+  border-bottom: 1px solid #ccc; /* Adds a line */
+}
+/* #endregion */
+
+/* #region SPACING */
+/* Reduce line spacing within the same block in view mode */
+.ls-block {
+  margin-bottom: 1px !important;  /* Adjust as needed */
+  padding-bottom: 1px !important;
+}
+
+/* Apply custom line height to block content and paragraphs */
+/* Ensure block content looks the same in view and edit mode */
+.block-content, .editor-inner, .block-properties {
+  color: var(--color-content-text) !important;
+  line-height: var(--ct-line-height, 1.4) !important;
+  padding: 4px !important;
+}
+
+/* Ensure inline text appearance is consistent */
+.editor-inner {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Ensure paragraphs inside editor and view mode look the same */
+.block-content p, .editor-inner p {
+  line-height: var(--ct-line-height, 1.4) !important;
+  margin-bottom: 4px !important;
+}
+/* #endregion */
+
+/* #region TAGS */
+.tag {
+  background-color: var(--color-tag) !important; /* Keeps the original background */
+  color: var(--color-tag-text) !important; /* Sets tag text color */
+  padding: 2px 2px !important;
+  border-radius: 3px !important;
+  font-weight: normal !important;
+  line-height: 1 !important; /* Reduce line spacing */
+  font-size: var(--font-content-size);
+  display: inline-block !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease-in-out; /* Smooth transition for color change */
   }
   
-  /* ===================================== */
-  /*            HEADINGS                   */
-  /* ===================================== */
-  /* Styles headings for both reading and editing modes. */
-  
-  h1, .block-content h1, .ls-block h1 {
-    font-size: var(--h1-size) !important; /* Sets h1 size */
-    color: var(--color-h1) !important; /* Sets h1 color */
-    font-weight: bold !important; /* Makes h1 bold */
-    margin-top: 9px !important; /* Adds top margin */
-    margin-bottom: 0px !important; /* Removes bottom margin */
-  }
-  
-  h2, .block-content h2, .ls-block h2 {
-    font-size: var(--h2-size) !important; /* Sets h2 size */
-    color: var(--color-h2) !important; /* Sets h2 color */
-    font-weight: bold !important; /* Makes h2 bold */
-    margin-top: 9px !important; /* Adds top margin */
-    margin-bottom: 0px !important; /* Removes bottom margin */
-  }
-  
-  h3, .block-content h3, .ls-block h3 {
-    font-size: var(--h3-size) !important; /* Sets h3 size */
-    color: var(--color-h3) !important; /* Sets h3 color */
-    font-weight: bold !important; /* Makes h3 bold */
-    margin-top: 9px !important; /* Adds top margin */
-    margin-bottom: 0px !important; /* Removes bottom margin */
-  }
-  
-  h4, .block-content h4, .ls-block h4 {
-    font-size: var(--h4-size) !important; /* Sets h4 size */
-    color: var(--color-h4) !important; /* Sets h4 color */
-    font-weight: bold !important; /* Makes h4 bold */
-    margin-top: 8px !important; /* Adds top margin */
-    margin-bottom: 0px !important; /* Removes bottom margin */
-  }
-  
-  h5, .block-content h5, .ls-block h5 {
-    font-size: var(--h5-size) !important; /* Sets h5 size */
-    color: var(--color-h5) !important; /* Sets h5 color */
-    font-weight: bold !important; /* Makes h5 bold */
-    margin-top: 8px !important; /* Adds top margin */
-    margin-bottom: 0px !important; /* Removes bottom margin */
-  }
-  
-  h6, .block-content h6, .ls-block h6 {
-    font-size: 15px !important; /* Sets h6 size */
-    color: var(--color-h6) !important; /* Sets h6 color */
-    font-weight: bold !important; /* Makes h6 bold */
-    margin-top: 7px !important; /* Adds top margin */
-    margin-bottom: 0px !important; /* Removes bottom margin */
-  }
-  
-  /* ===================================== */
-  /*            SPACING                    */
-  /* ===================================== */
-  /* Adjusts spacing for blocks and paragraphs. */
-  
-  .ls-block {
-    margin-bottom: 1px !important; /* Reduces bottom margin between blocks */
-    padding-bottom: 1px !important; /* Reduces bottom padding within blocks */
-  }
-  
-  .block-content, .editor-inner, .block-properties {
-    color: var(--color-content-text) !important; /* Sets text color for content */
-    line-height: var(--ct-line-height, 1.4) !important; /* Applies custom line height */
-    padding: 4px !important; /* Adds padding to content blocks */
-  }
-  
-  .editor-inner {
-    box-shadow: none !important; /* Removes shadow from editor area */
-    border: none !important; /* Removes border from editor area */
-  }
-  
-  .block-content p, .editor-inner p {
-    line-height: var(--ct-line-height, 1.4) !important; /* Applies line height to paragraphs */
-    margin-bottom: 4px !important; /* Adds bottom margin to paragraphs */
-  }
-  
- 
-  
-  /* ===================================== */
-  /*            TAGS                       */
-  /* ===================================== */
-  /* Styles tags with hover effects. */
-  
-  .tag {
-    background-color: var(--color-tag) !important; /* Sets tag background */
-    color: var(--color-tag-text) !important; /* Sets tag text color */
-    padding: 2px 2px !important; /* Adds padding to tags */
-    border-radius: 3px !important; /* Rounds tag corners */
-    font-weight: normal !important; /* Sets tag font weight */
-    line-height: 1 !important; /* Reduces line height within tags */
-    font-size: var(--font-content-size); /* Sets tag font size */
-    display: inline-block !important; /* Ensures inline display */
-    text-decoration: none !important; /* Removes underline */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);/* Smooth color transition on hover */
-  }
-  
+  /* Apply the hover effect */
   .tag:hover {
-    color: var(--color-tag-text-hover) !important; /* Changes text color on hover */
+    color: var(--color-tag-text-hover) !important;
   }
-  
-  /* ===================================== */
-  /*     CODES, QUOTES, AND FLASHCARDS     */
-  /* ===================================== */
-  /* Styles inline code, blockquotes, and flashcards. */
-  
-  code {
-    font-size: 11px !important; /* Sets smaller font size for inline code */
-    padding: 1px 1px !important; /* Adds minimal padding */
-    border-radius: 5px !important; /* Rounds corners */
-    line-height: 1 !important; /* Reduces line height */
-    background-color: var(--color-inline-code-bg) !important; /* Sets background */
-    color: var(--color-inline-code-text) !important; /* Sets text color */
-  }
-  
-  pre code {
-    font-size: inherit !important; /* Inherits font size for code blocks */
-    padding: inherit !important; /* Inherits padding for code blocks */
-  }
-  
-  :not(pre) > code {
-    font-size: 14px !important; /* Overrides font size for inline code */
-    padding: 0 !important; /* Removes padding */
-    line-height: 1 !important; /* Sets minimal line height */
-  }
-  
-  .blockquote {
-    background-color: var(--color-quote-bg) !important; /* Sets quote background */
-    color: var(--color-quote-text) !important; /* Sets quote text color */
-    padding: 10px !important; /* Adds padding */
-    border-left: 5px solid var(--color-link) !important; /* Adds left border */
-  }
-  
-  .flashcard {
-    background-color: var(--color-flashcard-bg); /* Sets flashcard background */
-    color: var(--color-flashcard-text); /* Sets flashcard text color */
-    padding: 10px; /* Adds padding */
-    border-radius: 5px; /* Rounds corners */
-  }
-  
-  /* ===================================== */
-  /*            TEXT HIGHLIGHTING          */
-  /* ===================================== */
-  /* Styles selected text. */
-  
-  ::selection {
-    background-color: var(--color-mark-bg) !important; /* Sets selection background */
-    color: var(--color-mark-text) !important; /* Sets selection text color */
-  }
-  
-  /* Applies the highlight color to marked text */
-  mark {
-    background-color: var(--ls-highlight-color); /* Sets background color for highlighted text */
-    color: var(--color-mark-text); /* Sets text color for highlighted text */
-  }
-  
-  /* ===================================== */
-  /*            MISCELLANEOUS              */
-  /* ===================================== */
-  /* Various miscellaneous styles. */
-  
- /* More comprehensive mobile optimization */
-@media (max-width: 768px) {
-  :root {
-    --font-content-size: 16px; /* Slightly smaller for mobile */
-    --font-ui-size: 15px; /* Smaller UI text on mobile */
-  }
-  
-  .embed-block {
-    margin-left: -20px; /* Reduce negative margins on mobile */
-    margin-right: -20px;
-  }
-  
-  .tag {
-    padding: 4px 6px !important; /* Larger touch target on mobile */
-  }
+/* #endregion */
+
+/* #region todo, logbook, time tracking */
+/* Style the checkbox as a light pink square */
+.form-checkbox {
+  appearance: none; /* Remove default checkbox styling */
+  width: 17px; /* Size of the square */
+  height: 17px; /* Size of the square */
+  background-color: #F5C6CB; /* Light pink background */
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 4px; /* Space between checkbox and TODO text */
 }
 
-/* Add tablet-specific optimizations */
-@media (min-width: 769px) and (max-width: 1200px) {
-  :root {
-    --ls-main-content-max-width: 90%; /* Proportional content width */
-    --ls-right-sidebar-width: 35%; /* Slightly narrower sidebar */
-  }
+/* Change the square color when the task is checked */
+.form-checkbox:checked {
+  background-color: #509e47; /* Darker pink when checked */
 }
 
-
-  
-
-  
-
-
-   /* ===================================== */
-  /*            ARROW              */
-  /* ===================================== */
-
- 
-/* shape of the toggling arrow */
-
-.rotating-arrow svg {
-  fill: #000000;
-  height: 22px;
+/* Style the TODO marker text */
+.marker-switch.block-marker.TODO {
+  color: #d13444; /* Light pink text */
+  font-weight: bold; /* Bold text */
+  text-transform: uppercase; /* Uppercase TODO */
+  border: 1px solid #d13444; /* Light pink border */
+  padding: 2px 3px; /* Space inside the border */
+  border-radius: 3px; /* Rounded corners */
 }
 
-.dark-theme .rotating-arrow svg {
-  fill: #ffffff;
-  height: 22px;
-}
-
-.block-control .control-hide:has(.rotating-arrow.collapsed) {
-  display: inline;
-  }
-
-
-   /* ===================================== */
-  /*            GRAPH              */
-  /* ===================================== */
-
- .graph {
-    transform: scale(1); /* Slightly enlarges the div */
-}
-
-.node:has(text:not(:empty):where(:text("Flashcards"))) circle {
-  fill: #FF0000 !important; /* Red */
-}
-
-
-
-
-   /* ===================================== */
-  /*            page propertieis              */
-  /* ===================================== */
-
-/* Hide the page properties content */
-.page-properties {
-  display: none !important;
-}
-
-/* Hide the bullet of the block containing page properties */
-.ls-block .page-properties {
-  display: none !important;
-}
-
-.ls-block .page-properties::before {
-  display: none !important;
-}
-.content .ls-block .pre-block {display: none}
-
-
-
-.page-reference {
-  transform: none !important; /* Disables transformations */
-  transition: none !important; /* Disables transitions */
-}
-
-.references .page-properties,
-.references .block-properties {
-  display: none; /* Hides properties in references */
-}
-
-#main-content-container div.page-linked div.references-blocks-item:has(a[data-ref="parent"]) {
-  display: none;
-}
-
+/* Increase the distance between different tasks */
 div[data-refs-self*="todo"] + div[data-refs-self*="todo"],
 div[data-refs-self*="done"] + div[data-refs-self*="done"] {
   margin-top: 0px !important; /* Removes top margin between consecutive tasks */
 }
 
-div.my-2.references-blocks-item:has(.page-ref[data-ref="contents"]),
-div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
-  display: none; /* Hides specific reference blocks */
+/* Only target LOGBOOK */
+.logbook,
+.block-properties .property-key[data-ref="logbook"] {
+  font-size: 11px;  /* Smaller size for LOGBOOK */
 }
 
+/* Style for Time Tracking (Clocked Tasks) */
+.time-spent {
+  padding-left: 1px;
+  text-wrap: nowrap;
+  font-weight: bold;
+}
+/* #endregion */
 
-
-/* ===================================== */
-/*            EMBEDDING SETTINGS         */
-/* ===================================== */
-
+/* #region PAGE & BLOCK EMBEDDING SETTINGS */
 /* Existing Styles for Embedded Blocks */
 .embed-block {
   margin-top: -10px; /* 10 is ideal */
@@ -602,9 +411,6 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
   display: none;
 }
 
-
-
-
 /* Ensure the block container and control don’t shift */
 .block-control {
   display: inline-block !important;
@@ -613,7 +419,209 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
   padding: 0 !important;
   transition: none !important;
 }
+ /* Add an "E" indicator with a hover tooltip */
+ .block-content-inner:has(.embed-block)::after,
+ .block-content-inner:has(.embed-page)::after {
+   padding-left: 10px; /* Space before the "E" */
+   color: hsl(var(--ct-accent-color)); /* Logseq’s accent color */
+   font-family: var(--ls-font-family-code); /* Code font */
+   font-weight: bold; /* Bold "E" */
+   content: "E"; /* Embed indicator */
+   cursor: pointer; /* Indicate interactivity */
+   position: relative; /* For popup positioning */
+ }
 
-.ls-block h1, .ls-block h2, .ls-block h3, .ls-block h4, .ls-block h5, .ls-block h6 {
-  border-bottom: 1px solid #ccc;
+/* #endregion */
+
+/* #region TEXT HIGHLIGHTING */
+::selection {
+  background-color: var(--color-mark-bg) !important; /* Sets selection background */
+  color: var(--color-mark-text) !important; /* Sets selection text color */
 }
+
+/* Applies the highlight color to marked text */
+mark {
+  background-color: var(--ls-highlight-color); /* Sets background color for highlighted text */
+  color: var(--color-mark-text); /* Sets text color for highlighted text */
+}
+
+/* Highlight entire block when in editor mode */
+.ls-block .editor-wrapper:focus-within {
+  background-color: #eaeaea !important;
+  border-radius: 5px !important;
+  padding: 2px !important;
+  margin: -2px !important;
+  outline: 2px solid #ccc !important;
+}
+
+.dark-theme .ls-block .editor-wrapper:focus-within {
+  background-color: #5a5858 !important;
+  border-radius: 5px !important;
+  padding: 2px !important;
+  margin: -2px !important;
+  outline: 2px solid #ccc !important;
+}
+/* #endregion */
+
+/* #region MOBILE TABLET */
+@media (max-width: 768px) {
+:root {
+  --font-content-size: 16px; /* Slightly smaller for mobile */
+  --font-ui-size: 15px; /* Smaller UI text on mobile */
+}
+
+.embed-block {
+  margin-left: -20px; /* Reduce negative margins on mobile */
+  margin-right: -20px;
+}
+
+.tag {
+  padding: 4px 6px !important; /* Larger touch target on mobile */
+}
+}
+
+/* Add tablet-specific optimizations */
+@media (min-width: 769px) and (max-width: 1200px) {
+:root {
+  --ls-main-content-max-width: 90%; /* Proportional content width */
+  --ls-right-sidebar-width: 35%; /* Slightly narrower sidebar */
+}
+}
+/* #endregion */
+
+/* #region GRAPH */
+.graph {
+  transform: scale(1.2); /* Slightly enlarges the div */
+}
+
+.graph-view .label { font-size: 12px !important; }
+
+
+
+
+
+/* #endregion */
+
+/* #region styles for bold and italic text */
+  strong, b {
+    color: var(--color-content-text-bold); /* Sets color for bold text */
+  }
+  
+em, i {
+    color: var(--color-content-text-italic); /* Sets color for italic text */
+  }
+/* #endregion */
+
+/* #region LINKS: internal, external, wikilinks  */
+.external-link {
+  color: var(--color-link-ext) !important; /* Sets color for external links */
+  text-decoration: none !important; /* Removes underline from external links */
+}
+
+.external-link:hover {
+  color: #A06F1A !important; /* Darkens external link color on hover */
+  text-decoration: none !important; /* Optional: Add underline on hover */
+}
+
+.internal-link {
+  color: var(--color-link);
+  text-decoration: none;
+}
+/* #endregion */
+
+/* #region code blocks  */
+  /* `code`  */
+  code {
+  font-size: 16px !important;  /* Smaller font */
+  padding: 1px 1px !important; /* Reduce padding */
+  border-radius: 5px !important; /* Smaller rounded corners */
+  line-height: 1 !important; /* Reduce line height */
+  color: var(--color-inline-singlecode-text) !important; /* Sets text color for code blocks */
+  background-color: var(--color-inline-code-bg) !important;
+}
+
+/* r, css, html box  */
+.CodeMirror pre.CodeMirror-line, .custom-query-title + .custom-query-results pre,
+pre.CodeMirror-line{
+  font-size: 16px; /* Sets font size for code blocks */
+  line-height: 1.5; /* Sets line height for code blocks */
+  color: var(--color-inline-code-text); /* Sets text color for code blocks */
+  border-radius: 4px;
+}
+
+/* #+BEGIN_EXAMPLE */
+  /* #+BEGIN_EXAMPLE */
+  .block-content pre {
+    font-family: Arial, sans-serif; /* Sets font for code blocks */
+    font-size: 18px; /* Sets font size for code blocks */
+    line-height: 1.2; /* Sets line height for code blocks */
+    color: var(--color-quote-text); /* Sets text color for code blocks */
+    background-color: var(--color-quote-bg);
+    border-radius: 4px;
+  }
+  /* #endregion */
+
+/* #region page and block properties content and hiding THIS IS A MESS */
+.block-properties {
+  display: none;
+}
+
+.page-properties {
+  display: none !important;
+  }
+  
+/* Hides properties in references */
+.references .page-properties,
+.references .block-properties {
+    display: none;
+}
+
+.page-reference {
+  transform: none !important; /* Disables transformations */
+  transition: none !important; /* Disables transitions */
+}
+div.color-level.embed-page {
+  background-color: transparent !important;
+}
+
+div.color-level.embed-block {
+  background-color: transparent !important;
+}
+
+.content .ls-block .pre-block {
+  display: none;
+}
+  
+
+/* #region toggle arrow */
+/* shape of the toggling arrow */
+.rotating-arrow svg {
+  fill: #000000;
+  height: 22px;
+}
+
+.dark-theme .rotating-arrow svg {
+  fill: #ffffff;
+  height: 22px;
+}
+
+.block-control .control-hide:has(.rotating-arrow.collapsed) {
+  display: inline;
+  }
+/* #endregion */
+
+/* #region hide specific reference blocks */
+div.my-2.references-blocks-item:has(.page-ref[data-ref="contents"]),
+div.my-2.references-blocks-item:has(.page-ref[data-ref="modules"]),
+div.my-2.references-blocks-item:has(.page-ref[data-ref="lab resources"]),
+div.my-2.references-blocks-item:has(.page-ref[data-ref="faculty resources"]),
+div.my-2.references-blocks-item:has(.page-ref[data-ref="definition"]),
+div.my-2.references-blocks-item:has(.page-ref[data-ref="flashcards"]),
+div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
+  display: none;
+}
+/* #endregion */
+
+
+
+
