@@ -362,64 +362,81 @@ div[data-refs-self*="done"] + div[data-refs-self*="done"] {
 }
 /* #endregion */
 
-/* #region PAGE & BLOCK EMBEDDING SETTINGS */
-/* Existing Styles for Embedded Blocks */
+/* #region PAGE & BLOCK EMBEDDING, page block property SETTINGS */
+/* Hides properties in references */
 .embed-block {
-  margin-top: -10px; /* 10 is ideal */
-  margin-left: -50px; /* 61 is ideal */
-  margin-right: -10px; /* 13 is ideal */
+  margin-top: -10px; /* Moves the embedded block up by 10px to reduce spacing. */
+  margin-left: -50px; /* Shifts the embedded block left by 50px to align with parent bullets. */
+  margin-right: -10px; /* Adjusts right margin for better spacing. */
 }
+
+
+/* Ensures embedded blocks with specific background class have a transparent background. */
 div.color-level.embed-block.bg-base-2 {
-  background-color: transparent;
+  background-color: transparent; /* Removes any background color, making it transparent. */
 }
 
-/* Existing Styles for Embedded Pages */
+/* Adjusts the positioning of embedded pages to align them properly within the parent page. */
 .embed-page {
-  margin-top: -16px;
-  margin-left: -39px;
-  margin-bottom: -16px;
-
+  margin-top: -16px; /* Moves the embedded page up by 16px to reduce spacing. */
+  margin-left: -39px; /* Shifts the embedded page left by 39px for alignment. */
+  margin-bottom: -16px; /* Adjusts bottom margin for better spacing. */
 }
+
+/* Ensures embedded pages with specific background class have a transparent background. */
 div.color-level.embed-page.bg-base-2 {
-  background-color: transparent;
+  background-color: transparent; /* Removes background color, making it transparent. */
 }
+
+/* Hides the bullet for the parent block that contains an embedded page with a specific background class. */
 div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-control-wrap.flex.flex-row.items-center > a.bullet-link-wrap {
-  display: none;
+  display: none; /* Removes the bullet to avoid double bullets in embedded content. */
 }
 
+/* Hides the bullet for embedded blocks. */
 .embed-block .bullet-link-wrap {
-  display: none;
+  display: none; /* Ensures no bullet is shown for embedded blocks. */
 }
 
+
+/* Hides the bullet for embedded blocks. */
+.embed-page .bullet-link-wrap {
+  display: none; /* Ensures no bullet is shown for embedded blocks. */
+} */
+
+/* Adjusts the left margin of the embedded page header for better alignment. */
 .embed-page > .embed-header {
-  margin-left: 8px;
+  margin-left: 8px; /* Adds 8px left margin to the header of embedded pages. */
 }
-.embed-page > .embed-header > div.mr-3 {
-  display: none;
-}
+
+
 
 /* Add this to hide the embedded page title */
 .embed-page .page-title {
   display: none;
 }
 
+/* Hides the header of embedded blocks. */
 .embed-block .embed-header {
-  display: none;
+  display: none; /* Removes the header from embedded blocks. */
 }
 
+/* Hides the header of embedded pages. */
 .embed-page .embed-header {
-  display: none;
+  display: none; /* Ensures the embedded page header is not visible. */
 }
 
-/* Ensure the block container and control don’t shift */
+/* Ensures the block control (e.g., bullet, toggle) is displayed inline and doesn’t shift. */
 .block-control {
-  display: inline-block !important;
-  vertical-align: top !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  transition: none !important;
+  display: inline-block !important; /* Forces inline-block display for consistent layout. */
+  vertical-align: top !important; /* Aligns the control to the top. */
+  margin: 0 !important; /* Removes any margins. */
+  padding: 0 !important; /* Removes any padding. */
+  transition: none !important; /* Disables transitions for stability. */
 }
- /* Add an "E" indicator with a hover tooltip */
+
+ /* 
+ /* Add an "E" indicator with a hover tooltip
  .block-content-inner:has(.embed-block)::after,
  .block-content-inner:has(.embed-page)::after {
    padding-left: 10px; /* Space before the "E" */
@@ -429,7 +446,72 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
    content: "E"; /* Embed indicator */
    cursor: pointer; /* Indicate interactivity */
    position: relative; /* For popup positioning */
- }
+ }    
+ */
+
+ /* Hides all block properties across the app. */
+.block-properties {
+  display: none!important;  /* Removes block properties from view. */
+}
+
+/* Hides all page properties across the app with high priority. */
+.page-properties {
+  display: none !important; /* Ensures page properties are not visible. */
+}
+
+
+/* Hides page and block properties in the "Linked References" section. */
+.references .page-properties,
+.references .block-properties {
+  display: none !important; /* Removes properties from references for cleaner display. */
+}
+
+/* Disables animations for page references to prevent visual glitches. */
+.page-reference {
+  transform: none !important; /* Prevents transformations (e.g., scaling). */
+  transition: none !important; /* Disables transitions (e.g., hover effects). */
+}
+
+/* Ensures all embedded pages have a transparent background. */
+div.color-level.embed-page {
+  background-color: transparent !important; /* Overrides any background color. */
+}
+
+/* Ensures all embedded blocks have a transparent background. */
+div.color-level.embed-block {
+  background-color: transparent !important; /* Overrides any background color. */
+}
+
+/* Hides the prefix area (e.g., timestamps, IDs) before block content. */
+.content .ls-block .pre-block {
+  display: none; /* Removes metadata or prefix elements for cleaner blocks. */
+}
+
+/* Hides properties in specific page blocks. */
+div.ls-page-block .properties {
+  display: none !important; /* Ensures properties are hidden in certain layouts. */
+}
+
+/* Hides page properties in specific page blocks. */
+div.ls-page-block .page-props {
+  display: none !important; /* Ensures page properties are hidden in certain layouts. */
+}
+
+/* Hides block properties in the "Linked References" section. */
+.references-blocks .block-content .block-properties {
+  display: none !important; /* Ensures block properties are hidden in references. */
+}
+
+/* Hides page properties in "Linked References" items. */
+div.references-blocks-item .page-properties {
+  display: none !important; /* Ensures page properties are hidden in references. */
+}
+
+/* Styles internal links (page and block references). */
+.page-ref, .block-ref {
+  color: var(--color-link) !important; /* Sets link color. */
+  text-decoration: none !important; /* Removes underline from links. */
+}
 
 /* #endregion */
 
@@ -490,14 +572,10 @@ mark {
 /* #endregion */
 
 /* #region GRAPH */
+
 .graph {
-  transform: scale(1.2); /* Slightly enlarges the div */
+  transform: scale(0.9); /* Slightly enlarges the div */
 }
-
-.graph-view .label { font-size: 12px !important; }
-
-
-
 
 
 /* #endregion */
@@ -561,38 +639,6 @@ pre.CodeMirror-line{
   }
   /* #endregion */
 
-/* #region page and block properties content and hiding THIS IS A MESS */
-.block-properties {
-  display: none;
-}
-
-.page-properties {
-  display: none !important;
-  }
-  
-/* Hides properties in references */
-.references .page-properties,
-.references .block-properties {
-    display: none;
-}
-
-.page-reference {
-  transform: none !important; /* Disables transformations */
-  transition: none !important; /* Disables transitions */
-}
-div.color-level.embed-page {
-  background-color: transparent !important;
-}
-
-div.color-level.embed-block {
-  background-color: transparent !important;
-}
-
-.content .ls-block .pre-block {
-  display: none;
-}
-  
-
 /* #region toggle arrow */
 /* shape of the toggling arrow */
 .rotating-arrow svg {
@@ -617,6 +663,7 @@ div.my-2.references-blocks-item:has(.page-ref[data-ref="lab resources"]),
 div.my-2.references-blocks-item:has(.page-ref[data-ref="faculty resources"]),
 div.my-2.references-blocks-item:has(.page-ref[data-ref="definition"]),
 div.my-2.references-blocks-item:has(.page-ref[data-ref="flashcards"]),
+div.my-2.references-blocks-item:has(.page-ref[data-ref="variables in gss moc"]),
 div.my-2.references-blocks-item:has(.page-ref[data-ref="homepage"]) {
   display: none;
 }
