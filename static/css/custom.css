@@ -409,8 +409,6 @@ div.block-main-container:has(div.color-level.embed-page.bg-base-2) > div.block-c
   margin-left: 8px; /* Adds 8px left margin to the header of embedded pages. */
 }
 
-
-
 /* Add this to hide the embedded page title */
 .embed-page .page-title {
   display: none;
